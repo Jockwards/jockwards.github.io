@@ -1,1 +1,0 @@
-Jocke meckar och pillar.
