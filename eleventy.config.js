@@ -1,6 +1,19 @@
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy('bundle.css')
+  // Copy `src/assets` to `_site/assets`
+  eleventyConfig.addPassthroughCopy("src/assets");
+
+  // Shortcode for current date and time
+  eleventyConfig.addShortcode('datetime', function() {
+    return new Date().toLocaleString();
+  });
+
   return {
-    passthroughFileCopy: true
-  }
-}
+    dir: {
+      input: "src",
+      output: "_site",
+      includes: "includes",
+      layouts: "layouts",
+      data: "data"
+    }
+  };
+};
