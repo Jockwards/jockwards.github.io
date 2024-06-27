@@ -13,3 +13,7 @@ body {
     background-color: #05668D;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+nav {
+  font-size: 20px;
+}
