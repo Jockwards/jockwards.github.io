@@ -3,27 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/pages.css" />
+<link rel="stylesheet" href="assets/css/nav.css" />
     <title>Tips</title>
   </head>
   <body>
-    <nav>
-| <a href="/emtips/">emtips</a> | <a href="/tipstabell/">tipstabell</a> | <a href="/chatgpt">ChatGPT analyerar</a> |
-</nav>
-<p><br />
+  <nav>
+    | <a href="/emtips/">emtips</a> | <a href="/tipstabell/">tipstabell</a> | <a href="/chatgpt">ChatGPT analyerar</a> |
+<p></nav>
+<br />
 Här är en ny visualisering av poängen över tid för EM 2024 med några nyckelinsikter om lagens prestationer.</p>
 <h3>Visualisering</h3>
-<p>Jag kommer att skapa grafen igen och sedan lyfta fram några nyckelinsikter baserat på poängdata.</p>
-<h3>Insikter:</h3>
-<ul>
-<li><strong>Högsta poäng per match</strong>: Identifiera vilka matcher som gav högsta poäng.</li>
-<li><strong>Topprestationer per lag</strong>: Vilka lag som oftast resulterade i högre poäng.</li>
-<li><strong>Eventuella trender över tid</strong>: Notera om det finns några trender i hur poängen förändras över tid.</li>
-</ul>
-<p>Låt oss gå igenom dessa punkter efter att vi har visualiserat data.</p>
-<p>Här är en uppdaterad visualisering av poängen över tid, följt av några viktiga insikter baserat på poängdata:</p>
-<h3>Visualisering</h3>
-<img src="/assets/media/euro24/emtrend.jpg" width=1000px>
+<img src="/assets/media/euro24/emtrend.jpg" width=800px>
 <h3>Nyckelinsikter</h3>
 <ol>
 <li>

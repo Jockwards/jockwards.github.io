@@ -7,29 +7,20 @@ title: chatgpt analyserar
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/pages.css" />
+   
+<link rel="stylesheet" href="assets/css/nav.css" />
     <title>Tips</title>
   </head>
   <body>
+  <nav>
     {% include "nav.njk" %}
+    </nav>
     <br />
    Här är en ny visualisering av poängen över tid för EM 2024 med några nyckelinsikter om lagens prestationer.
 
 ### Visualisering
 
-Jag kommer att skapa grafen igen och sedan lyfta fram några nyckelinsikter baserat på poängdata.
-
-### Insikter:
-- **Högsta poäng per match**: Identifiera vilka matcher som gav högsta poäng.
-- **Topprestationer per lag**: Vilka lag som oftast resulterade i högre poäng.
-- **Eventuella trender över tid**: Notera om det finns några trender i hur poängen förändras över tid.
-
-Låt oss gå igenom dessa punkter efter att vi har visualiserat data.
-
-Här är en uppdaterad visualisering av poängen över tid, följt av några viktiga insikter baserat på poängdata:
-
-### Visualisering
-<img src="/assets/media/euro24/emtrend.jpg" width=1000px>
+<img src="/assets/media/euro24/emtrend.jpg" width=800px>
 
 ### Nyckelinsikter
 
@@ -53,6 +44,3 @@ Grafen visar att vissa lag konsekvent gav högre poäng, vilket kan indikera der
 Om du har fler frågor eller behöver ytterligare analys, låt mig veta!
   </body>
 </html>
-
-
-
