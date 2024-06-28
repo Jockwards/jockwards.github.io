@@ -1,10 +1,9 @@
 nav a {
   font-size: 18px; /* Adjust the value as needed */
-}
-nav a {
+  font-family: Arial, Helvetica, sans-serif;
   display: inline-block;
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #2915db;
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
