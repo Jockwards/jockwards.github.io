@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/nav.css" />
+    <link rel="stylesheet" href="/assets/css/nav.css" />
     <title>Tips</title>
   </head>
   <body>
-<p><nav>|<a href="/emtips/">emtips</a> | <a href="/tipstabell/">tipstabell</a> | <a href="/chatgpt">ChatGPT analyserar</a> |</nav></p>
-<p><br />
-Här är en ny visualisering av poängen över tid för EM 2024 med några nyckelinsikter om lagens prestationer.</p>
+    <nav><a href="/emtips/">emtips</a> <a href="/tipstabell/">tipstabell</a> <a href="/chatgpt">ChatGPT analyserar</a></nav>
+<p>Här är en ny visualisering av poängen över tid för EM 2024 med några nyckelinsikter om lagens prestationer.</p>
 <h3>Visualisering</h3>
 <img src="/assets/media/euro24/emtrend.jpg" width=800px>
 <h3>Nyckelinsikter</h3>
