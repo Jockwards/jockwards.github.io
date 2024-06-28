@@ -1,3 +1,9 @@
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
 nav a {
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
@@ -7,9 +13,16 @@ nav a {
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
+  white-space: nowrap;
+  margin-right: 5px;
+}
+nav a:last-child {
+  margin-right: 0; 
 }
 nav a:hover {
   background-color: #555;
 }
 
-body {margin-top: 20px;}
+body {
+  margin-top: 20px;
+}
