@@ -26,3 +26,10 @@ nav a:hover {
 body {
   margin-top: 20px;
 }
+
+.claude-main {
+  max-width: 600px;
+
+  text-align: left;
+
+}
