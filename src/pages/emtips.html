@@ -4,24 +4,20 @@ permalink: /emtips/
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/assets/favicon/jp-favicon.svg"
-    />
-    <link rel="stylesheet" href="/assets/css/nav.css" />
-    <title>Tips</title>
-  </head>
-  <body>
-    {% include "nav.njk" %}
-    <br />
-    <iframe
-      height="1500px"
-      width="1300px"
-      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSabSnYKmdp-IkIW6Nb9gK8qagjFJbbJEXxWfe-sNEARjuGHkY_rYUKFK-P-JcfX_pa5IaUnXFNFvMg/pubhtml?gid=312705507&amp;single=true&amp;widget=true&amp;headers=false"
-    ></iframe>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/jp-favicon.svg" />
+  <link rel="stylesheet" href="/assets/css/nav.css" />
+  <title>Tips</title>
+</head>
+
+<body>
+  {% include "nav_tips.njk" %}
+  <br />
+  <iframe height="1500px" width="1300px"
+    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSabSnYKmdp-IkIW6Nb9gK8qagjFJbbJEXxWfe-sNEARjuGHkY_rYUKFK-P-JcfX_pa5IaUnXFNFvMg/pubhtml?gid=312705507&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+</body>
+
 </html>

@@ -1,7 +1,8 @@
 ---
-permalink: /chatgpt
+permalink: /chatgpt/
 title: chatgpt analyserar
 ---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,9 +13,9 @@ title: chatgpt analyserar
     <title>Tips</title>
   </head>
   <body>
-    {% include "nav.njk" %}
+    {% include "nav_tips.njk" %}
 
-   Här är en ny visualisering av poängen över tid för EM 2024 med några nyckelinsikter om lagens prestationer.
+Här är en ny visualisering av poängen över tid för EM 2024 med några nyckelinsikter om lagens prestationer.
 
 ### Visualisering
 
@@ -23,10 +24,12 @@ title: chatgpt analyserar
 ### Nyckelinsikter
 
 1. **Högsta poäng per match**:
+
    - **18 poäng**: Flera matcher resulterade i denna höga poäng, inklusive matcher som **Tyskland-Skottland**, **Italien-Albanien**, och **Österrike-Frankrike**.
    - Dessa matcher verkar ha varit särskilt förutsägbara eller viktiga i poängsättningen.
 
 2. **Topprestationer per lag**:
+
    - **Tyskland** presterade bäst totalt sett med **40 poäng**.
    - **Albanien** och **Spanien** följde nära efter med vardera **39 poäng**.
    - Andra lag som också bidrog till höga poäng var **Turkiet**, **Italien**, och **Portugal** med **33 poäng** vardera.
@@ -40,5 +43,6 @@ title: chatgpt analyserar
 Grafen visar att vissa lag konsekvent gav högre poäng, vilket kan indikera deras starka förutsägbara resultat under turneringen. Tyskland, Albanien, och Spanien var de lag som genererade flest poäng, vilket pekar på deras nyckelroll i tipstävlingen.
 
 Om du har fler frågor eller behöver ytterligare analys, låt mig veta!
+
   </body>
 </html>
