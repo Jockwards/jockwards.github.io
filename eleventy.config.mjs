@@ -1,15 +1,29 @@
-export default function(eleventyConfig) {
+export default function (eleventyConfig) {
 
-  // Copy `src/assets` to `_site/assets`
-  eleventyConfig.addPassthroughCopy("src/assets");
-
-  eleventyConfig.addCollection("posts", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/posts/*.md");
+  // Copy `src/assets` to `_site/assets` except the tailwind.css source file
+  eleventyConfig.addPassthroughCopy({
+    "src/assets/favicon": "assets/favicon",
+    "src/assets/media": "assets/media",
+    "src/assets/css/nav.css": "assets/css/nav.css"
   });
 
-  // Shortcode for current date and time
-  eleventyConfig.addShortcode('datetime', function() {
-    return new Date().toLocaleString();
+  eleventyConfig.addCollection("posts", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/posts/*.md").sort((a, b) => {
+      return b.date - a.date; // Sort by date descending (newest first)
+    });
+  });
+
+  // Shortcode for current date and time in 24h format
+  eleventyConfig.addShortcode('datetime', function () {
+    return new Date().toLocaleString('sv-SE', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
   });
 
   return {

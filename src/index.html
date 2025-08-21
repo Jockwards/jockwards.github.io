@@ -1,31 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/css/bundle.css" />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon/jp-favicon.svg" />
-  <title>jocke.xyz</title>
+  <title>Jocke på internet - En nördig blogg</title>
+  <meta name="description" content="En modern men lite nördig blogg om teknik, kod och slumpmässiga tankar från Jocke.">
 </head>
 
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>jocke.XYZ</h1>
-    </div>
-    <h2>Random Thoughts</h2>
-    <ul>
-      {% for post in collections.posts | reverse %}
-      <li>
-        <strong> <a href="{{ post.url }}">{{ post.data.title }}</a></strong>
-        <em>{{ post.date | date: "%Y-%m-%d" }}</em><br>
-        {{ post.templateContent}}
+  <div class="main-container">
+    <header class="header">
+      <h1 class="site-title">Jocke på internet</h1>
+      <p class="site-subtitle">
+        <span class="status-indicator"></span>
+        En blogg om foto, teknik och slumpmässiga tankar
+      </p>
+    </header>
 
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
+    <main>
+      <section>
+
+        {% if collections.posts.length > 0 %}
+        <div class="posts-container">
+          {% for post in collections.posts %}
+          <article class="post-card">
+            <h3 class="post-title">{{ post.data.title }}</h3>
+            <div class="post-date">{{ post.date | date: "%Y-%m-%d" }}</div>
+            <div class="post-content">
+              {{ post.templateContent }}
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="post-card">
+          <h3 class="post-title">Välkommen!</h3>
+          <div class="post-date">{{ "now" | date: "%Y-%m-%d" }}</div>
+          <div class="post-content">
+            <p>Hej och välkommen till min lilla hörna av internet! 👋</p>
+            <p>Här kommer jag att dela med mig av tankar om programmering, teknik och andra nördiga ämnen.
+              Håll utkik efter fler inlägg framöver!</p>
+            <p><code>console.log("Mer innehåll kommer snart...");</code></p>
+          </div>
+        </div>
+        {% endif %}
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        {% datetime %} | jocke@internet
+      </p>
+    </footer>
   </div>
 </body>
 
