@@ -1,0 +1,14 @@
+# Generated files
+_site/
+
+# Dependencies  
+node_modules/
+
+# Backup files
+bak_*
+
+# Media files that Biome can't handle
+*.jpg
+*.png
+*.mp4
+*.svg

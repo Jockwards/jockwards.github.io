@@ -1,0 +1,32 @@
+---
+layout: base.njk
+---
+
+<section>
+  <h2 class="section-header">Senaste inlägg</h2>
+  
+  {% if collections.posts.length > 0 %}
+  <div class="posts-container">
+    {% for post in collections.posts %}
+    <article class="post-card">
+      <h3 class="post-title">{{ post.data.title }}</h3>
+      <div class="post-date">{{ post.date.toLocaleDateString('sv-SE') }}</div>
+      <div class="post-content">
+        {{ post.templateContent | safe }}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="post-card">
+    <h3 class="post-title">Välkommen!</h3>
+    <div class="post-date">{% datetime %}</div>
+    <div class="post-content">
+      <p>Hej och välkommen till min lilla hörna av internet! 👋</p>
+      <p>Här kommer jag att dela med mig av tankar om programmering, teknik och andra nördiga ämnen.
+        Håll utkik efter fler inlägg framöver!</p>
+      <p><code>console.log("Mer innehåll kommer snart...");</code></p>
+    </div>
+  </div>
+  {% endif %}
+</section>

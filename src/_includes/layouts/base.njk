@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} - {% endif %}Jocke på internet</title>
+  <meta name="description" content="{{ description or 'En blogg om foto, teknik och slumpmässiga tankar' }}">
+  <link rel="stylesheet" href="/assets/css/bundle.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/jp-favicon.svg">
+</head>
+<body>
+  <div class="main-container">
+    <header class="header">
+      <h1 class="site-title">Jocke på internet</h1>
+      <p class="site-subtitle">En blogg om foto, teknik och slumpmässiga tankar</p>
+    </header>
+
+    <main>
+      {{ content | safe }}
+    </main>
+
+    <footer class="footer">
+      <p><span class="terminal-prompt">jocke@internet:~$</span> uptime: {% datetime %}</p>
+    </footer>
+  </div>
+</body>
+</html>

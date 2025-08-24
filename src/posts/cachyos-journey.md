@@ -1,6 +1,8 @@
 ---
 title: CachyOS
 date: 2025-08-21
+layout: post.njk
+description: Min resa med CachyOS Linux de senaste tre veckorna - problem, lösningar och lärdomar
 ---
 
 Jag har kört CachyOS i tre veckor snart. Det började med problem, och det är inte helt problemfritt fortfarande. Jag tampas nästan dagligen med Battle.net och det finns inget riktigt bra sätt att köra GeForce Now på än så länge. Jag fick också installera Windows för att kunna spela Battlefield 6 betan med en kompis.

@@ -1,29 +1,33 @@
 {
-  "name": "jocke-pa-internet",
-  "version": "1.0.0",
-  "description": "En modern men lite nördig blogg om kod, teknik och slumpmässiga tankar",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/bundle.css",
-    "watch:css": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/bundle.css --watch",
-    "build:11ty": "npx @11ty/eleventy",
-    "build": "npm run build:css && npm run build:11ty",
-    "start": "npx @11ty/eleventy --serve",
-    "dev": "npm run watch:css & npx @11ty/eleventy --serve --watch"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@11ty/eleventy": "^3.1.0",
-    "@tailwindcss/cli": "^4.1.12",
-    "@tailwindcss/typography": "^0.5.16",
-    "tailwindcss": "^4.1.12"
-  },
-  "dependencies": {
-    "n": "^10.1.0",
-    "stable": "^0.1.8"
-  },
-  "type": "module"
+	"name": "jocke-pa-internet",
+	"version": "1.0.0",
+	"description": "En modern men lite nördig blogg om kod, teknik och slumpmässiga tankar",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build:css": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/bundle.css",
+		"watch:css": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/bundle.css --watch",
+		"build:11ty": "npx @11ty/eleventy",
+		"build": "npm run build:css && npm run build:11ty",
+		"start": "npx @11ty/eleventy --serve",
+		"dev": "npm run watch:css & npx @11ty/eleventy --serve --watch",
+		"lint": "npx @biomejs/biome check .",
+		"lint:fix": "npx @biomejs/biome check --write .",
+		"format": "npx @biomejs/biome format --write ."
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@11ty/eleventy": "^3.1.0",
+		"@biomejs/biome": "^2.2.2",
+		"@tailwindcss/cli": "^4.1.12",
+		"@tailwindcss/typography": "^0.5.16",
+		"tailwindcss": "^4.1.12"
+	},
+	"dependencies": {
+		"n": "^10.1.0",
+		"stable": "^0.1.8"
+	},
+	"type": "module"
 }
