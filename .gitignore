@@ -1,8 +1,7 @@
 # Dependencies
 node_modules/
 
-# Build output (Eleventy generates this)
-_site/
+
 
 # Package lock file (optional - some prefer to track this)
 package-lock.json
