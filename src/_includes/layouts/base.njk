@@ -11,7 +11,12 @@
 <body>
   <div class="main-container">
     <header class="header">
-      <h1 class="site-title">Jocke på internet</h1>
+      <div class="header-top">
+        <h1 class="site-title">Jocke på internet</h1>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Växla mellan ljust och mörkt tema">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
       <p class="site-subtitle">En blogg om foto, teknik och slumpmässiga tankar</p>
     </header>
 
@@ -23,5 +28,35 @@
       <p><span class="terminal-prompt">jocke@internet:~$</span> uptime: {% datetime %}</p>
     </footer>
   </div>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const themeIcon = document.querySelector('.theme-icon');
+      
+      if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        body.classList.add('light-mode');
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    // Load saved theme on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedTheme = localStorage.getItem('theme');
+      const themeIcon = document.querySelector('.theme-icon');
+      
+      if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        themeIcon.textContent = '☀️';
+      } else {
+        themeIcon.textContent = '🌙';
+      }
+    });
+  </script>
 </body>
 </html>

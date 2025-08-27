@@ -1,18 +1,30 @@
 @import "tailwindcss";
 
-/* Modern Nerdy Theme */
+/* Modern Nerdy Theme - Dark Mode (Default) */
 @layer base {
 	body {
-		background: linear-gradient(135deg, rgb(15 23 42) 0%, rgb(30 41 59) 100%);
+		background: rgb(15 23 42); /* Solid dark background instead of gradient */
 		color: rgb(226 232 240);
 		font-family:
 			"Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
 		min-height: 100vh;
+		transition: background-color 0.3s ease, color 0.3s ease;
+	}
+
+	/* Light Mode Styles */
+	body.light-mode {
+		background: rgb(248 250 252); /* Light gray background */
+		color: rgb(30 41 59); /* Dark text for light mode */
 	}
 
 	::selection {
 		background-color: rgb(34 197 94);
 		color: rgb(15 23 42);
+	}
+
+	body.light-mode ::selection {
+		background-color: rgb(59 130 246);
+		color: rgb(255 255 255);
 	}
 }
 
@@ -29,15 +41,33 @@
 		margin-bottom: 3rem;
 		border-bottom: 2px solid rgb(34 197 94);
 		padding-bottom: 2rem;
+		transition: border-color 0.3s ease;
+	}
+
+	body.light-mode .header {
+		border-bottom-color: rgb(59 130 246);
+	}
+
+	.header-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 0.5rem;
 	}
 
 	.site-title {
 		font-size: 3rem;
 		font-weight: 700;
 		color: rgb(34 197 94);
-		margin-bottom: 0.5rem;
+		margin: 0;
 		text-shadow: 0 0 20px rgb(34 197 94 / 0.5);
 		letter-spacing: -0.05em;
+		transition: color 0.3s ease, text-shadow 0.3s ease;
+	}
+
+	body.light-mode .site-title {
+		color: rgb(59 130 246);
+		text-shadow: 0 2px 10px rgb(59 130 246 / 0.3);
 	}
 
 	.site-subtitle {
@@ -46,11 +76,49 @@
 		font-family: ui-sans-serif, system-ui, sans-serif;
 		font-weight: 300;
 		margin-bottom: 0;
+		transition: color 0.3s ease;
+	}
+
+	body.light-mode .site-subtitle {
+		color: rgb(71 85 105);
+	}
+
+	.theme-toggle {
+		background: rgb(30 41 59);
+		border: 2px solid rgb(34 197 94);
+		border-radius: 50%;
+		width: 3rem;
+		height: 3rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		font-size: 1.2rem;
+	}
+
+	.theme-toggle:hover {
+		background: rgb(34 197 94);
+		transform: scale(1.1);
+	}
+
+	body.light-mode .theme-toggle {
+		background: rgb(248 250 252);
+		border-color: rgb(59 130 246);
+	}
+
+	body.light-mode .theme-toggle:hover {
+		background: rgb(59 130 246);
 	}
 
 	.terminal-prompt {
 		color: rgb(34 197 94);
 		margin-right: 0.5rem;
+		transition: color 0.3s ease;
+	}
+
+	body.light-mode .terminal-prompt {
+		color: rgb(59 130 246);
 	}
 
 	.section-header {
@@ -61,12 +129,22 @@
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
+		transition: color 0.3s ease;
+	}
+
+	body.light-mode .section-header {
+		color: rgb(59 130 246);
 	}
 
 	.section-header::before {
 		content: ">";
 		color: rgb(34 197 94);
 		font-weight: 700;
+		transition: color 0.3s ease;
+	}
+
+	body.light-mode .section-header::before {
+		color: rgb(59 130 246);
 	}
 
 	.post-card {
@@ -80,20 +158,21 @@
 		overflow: hidden;
 	}
 
-	.post-card::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 3px;
-		background: linear-gradient(90deg, rgb(34 197 94), rgb(59 130 246));
-	}
-
 	.post-card:hover {
 		border-color: rgb(34 197 94);
-		box-shadow: 0 0 30px rgb(34 197 94 / 0.2);
+		box-shadow: 0 4px 20px rgb(34 197 94 / 0.2);
 		transform: translateY(-2px);
+	}
+
+	body.light-mode .post-card {
+		background: rgb(255 255 255);
+		border-color: rgb(226 232 240);
+		box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+	}
+
+	body.light-mode .post-card:hover {
+		border-color: rgb(59 130 246);
+		box-shadow: 0 8px 25px rgb(59 130 246 / 0.2);
 	}
 
 	.post-title {
@@ -110,11 +189,24 @@
 		color: rgb(34 197 94);
 	}
 
+	body.light-mode .post-title {
+		color: rgb(30 41 59);
+	}
+
+	body.light-mode .post-title:hover {
+		color: rgb(59 130 246);
+	}
+
 	.post-date {
 		color: rgb(148 163 184);
 		font-size: 0.875rem;
 		font-family: ui-sans-serif, system-ui, sans-serif;
 		margin-bottom: 1rem;
+		transition: color 0.3s ease;
+	}
+
+	body.light-mode .post-date {
+		color: rgb(71 85 105);
 	}
 
 	.post-date::before {
@@ -126,10 +218,42 @@
 		color: rgb(203 213 225);
 		line-height: 1.6;
 		font-family: ui-sans-serif, system-ui, sans-serif;
+		transition: color 0.3s ease;
+	}
+
+	body.light-mode .post-content {
+		color: rgb(51 65 85);
 	}
 
 	.post-content p {
 		margin-bottom: 1rem;
+	}
+
+	.post-content code {
+		background: rgb(15 23 42);
+		color: rgb(34 197 94);
+		padding: 0.25rem 0.5rem;
+		border-radius: 4px;
+		font-size: 0.875rem;
+		transition: all 0.3s ease;
+	}
+
+	body.light-mode .post-content code {
+		background: rgb(241 245 249);
+		color: rgb(59 130 246);
+	}
+
+	.post-content img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 8px;
+		margin: 1rem 0;
+		cursor: pointer;
+		transition: transform 0.2s ease;
+	}
+
+	.post-content img:hover {
+		transform: scale(1.02);
 	}
 
 	.ascii-art {
@@ -140,6 +264,11 @@
 		margin: 2rem 0;
 		white-space: pre;
 		opacity: 0.7;
+		transition: color 0.3s ease;
+	}
+
+	body.light-mode .ascii-art {
+		color: rgb(59 130 246);
 	}
 
 	.footer {
@@ -149,6 +278,12 @@
 		border-top: 1px solid rgb(51 65 85);
 		color: rgb(148 163 184);
 		font-size: 0.875rem;
+		transition: all 0.3s ease;
+	}
+
+	body.light-mode .footer {
+		border-top-color: rgb(226 232 240);
+		color: rgb(71 85 105);
 	}
 
 	.status-indicator {
@@ -159,6 +294,29 @@
 		border-radius: 50%;
 		margin-right: 0.5rem;
 		animation: pulse 2s infinite;
+		transition: background-color 0.3s ease;
+	}
+
+	body.light-mode .status-indicator {
+		background-color: rgb(59 130 246);
+	}
+
+	/* Responsive adjustments */
+	@media (max-width: 768px) {
+		.header-top {
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		.site-title {
+			font-size: 2rem;
+		}
+
+		.theme-toggle {
+			width: 2.5rem;
+			height: 2.5rem;
+			font-size: 1rem;
+		}
 	}
 
 	@keyframes pulse {

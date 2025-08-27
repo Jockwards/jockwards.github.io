@@ -6,6 +6,9 @@ export default function (eleventyConfig) {
 		"src/assets/css/nav.css": "assets/css/nav.css",
 	});
 
+	// Ignore layout files from being processed as pages
+	eleventyConfig.ignores.add("src/_includes/**");
+
 	eleventyConfig.addCollection("posts", (collectionApi) =>
 		collectionApi.getFilteredByGlob("src/posts/*.md").sort((a, b) => {
 			return b.date - a.date; // Sort by date descending (newest first)
