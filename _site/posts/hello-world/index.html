@@ -20,10 +20,30 @@
       <p class="site-subtitle">En blogg om foto, teknik och slumpmässiga tankar</p>
     </header>
 
+    <nav class="tag-nav">
+      <a href="#" class="tag-link tag-filter active" data-tag="all" style="background-color: #64748b;">Alla</a>
+      
+        <a href="#" class="tag-link tag-filter" data-tag="personligt" style="background-color: #22c55e;">personligt</a>
+      
+        <a href="#" class="tag-link tag-filter" data-tag="teknologi" style="background-color: #3b82f6;">teknologi</a>
+      
+        <a href="#" class="tag-link tag-filter" data-tag="övrigt" style="background-color: #a855f7;">övrigt</a>
+      
+    </nav>
+
     <main>
       
 <article class="post-card">
-  <h1 class="post-title">Hej världen</h1>
+  <div class="post-header-container">
+    <h1 class="post-title">Hej världen</h1>
+    
+      <div class="post-tags">
+        
+          <a href="/tags/ovrigt/" class="tag-link" style="background-color: #a855f7;">övrigt</a>
+        
+      </div>
+    
+  </div>
   <div class="post-date">2025-05-27</div>
   <div class="post-content">
     <p>Jag är tillbaka på internet efter ungefär 25 år. Detta är min första post, och tanken är att den är sidan ska bli en typ av blogg. Jag behöver samla mina tankar någonstans och varför inte på internet?</p>
@@ -52,7 +72,7 @@
     </main>
 
     <footer class="footer">
-      <p><span class="terminal-prompt">jocke@internet:~$</span> uptime: 2025-08-27 21:33:42</p>
+      <p><span class="terminal-prompt">jocke@internet:~$</span> uptime: 2025-09-09 23:13:42</p>
     </footer>
   </div>
 
@@ -60,7 +80,7 @@
     function toggleTheme() {
       const body = document.body;
       const themeIcon = document.querySelector('.theme-icon');
-      
+
       if (body.classList.contains('light-mode')) {
         body.classList.remove('light-mode');
         themeIcon.textContent = '🌙';
@@ -76,7 +96,7 @@
     document.addEventListener('DOMContentLoaded', function() {
       const savedTheme = localStorage.getItem('theme');
       const themeIcon = document.querySelector('.theme-icon');
-      
+
       if (savedTheme === 'light') {
         document.body.classList.add('light-mode');
         themeIcon.textContent = '☀️';
@@ -84,6 +104,74 @@
         themeIcon.textContent = '🌙';
       }
     });
+  </script>
+
+  <script>
+  // Client-side multi-tag filtering
+  document.addEventListener('DOMContentLoaded', () => {
+    const filters = document.querySelectorAll('.tag-filter');
+    const posts = document.querySelectorAll('.post-card[data-tags]');
+    let activeFilters = ['all'];
+
+    filters.forEach(filter => {
+      filter.addEventListener('click', (e) => {
+        e.preventDefault();
+        const clickedTag = filter.dataset.tag;
+
+        // Handle 'All' button
+        if (clickedTag === 'all') {
+          activeFilters = ['all'];
+        } else {
+          // Remove 'all' if another tag is selected
+          const allIndex = activeFilters.indexOf('all');
+          if (allIndex > -1) {
+            activeFilters.splice(allIndex, 1);
+          }
+
+          // Add or remove the clicked tag
+          const tagIndex = activeFilters.indexOf(clickedTag);
+          if (tagIndex > -1) {
+            activeFilters.splice(tagIndex, 1);
+          } else {
+            activeFilters.push(clickedTag);
+          }
+
+          // If no filters are left, default back to 'all'
+          if (activeFilters.length === 0) {
+            activeFilters.push('all');
+          }
+        }
+
+        updateActiveButtons();
+        filterPosts();
+      });
+    });
+
+    function updateActiveButtons() {
+      filters.forEach(filter => {
+        const tag = filter.dataset.tag;
+        if (activeFilters.includes(tag)) {
+          filter.classList.add('active');
+        } else {
+          filter.classList.remove('active');
+        }
+      });
+    }
+
+    function filterPosts() {
+      posts.forEach(post => {
+        const postTags = post.dataset.tags.split(',');
+
+        if (activeFilters.includes('all')) {
+          post.style.display = '';
+          return;
+        }
+
+        const isVisible = activeFilters.some(filter => postTags.includes(filter));
+        post.style.display = isVisible ? '' : 'none';
+      });
+    }
+  });
   </script>
 </body>
 </html>

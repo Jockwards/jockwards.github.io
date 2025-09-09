@@ -4,12 +4,21 @@ layout: base.njk
 
 <section>
   <h2 class="section-header">Senaste inlägg</h2>
-  
+
   {% if collections.posts.length > 0 %}
   <div class="posts-container">
     {% for post in collections.posts %}
-    <article class="post-card">
-      <h3 class="post-title">{{ post.data.title }}</h3>
+    <article class="post-card" data-tags="{{ post.data.tags | join(',') }}">
+      <div class="post-header-container">
+        <h3 class="post-title">{{ post.data.title }}</h3>
+        {% if post.data.tags %}
+          <div class="post-tags">
+            {% for tag in post.data.tags %}
+              <a href="#" class="tag-link tag-filter" data-tag="{{ tag }}" style="background-color: {{ tagColors[tag] or '#64748b' }};">{{ tag }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
       <div class="post-date">{{ post.date.toLocaleDateString('sv-SE') }}</div>
       <div class="post-content">
         {{ post.templateContent | safe }}

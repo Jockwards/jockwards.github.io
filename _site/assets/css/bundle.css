@@ -167,9 +167,44 @@
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
 }
+.tag-nav {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.tag-link {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0.25rem;
+  transition: transform 0.2s;
+}
+.tag-link:hover {
+  transform: translateY(-2px);
+}
+.tag-filter.active {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+.post-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.post-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
 @layer base {
   body {
-    background: rgb(15 23 42);
+    background: rgb( 15 23 42 );
     color: rgb(226 232 240);
     font-family: "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
     min-height: 100vh;
@@ -434,7 +469,7 @@
     }
   }
   @keyframes pulse {
-    0%,	100% {
+    0%, 100% {
       opacity: 1;
     }
     50% {

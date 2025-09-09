@@ -20,6 +20,13 @@
       <p class="site-subtitle">En blogg om foto, teknik och slumpmässiga tankar</p>
     </header>
 
+    <nav class="tag-nav">
+      <a href="#" class="tag-link tag-filter active" data-tag="all" style="background-color: #64748b;">Alla</a>
+      {% for tag in collections.tagList %}
+        <a href="#" class="tag-link tag-filter" data-tag="{{ tag }}" style="background-color: {{ tagColors[tag] or '#64748b' }};">{{ tag }}</a>
+      {% endfor %}
+    </nav>
+
     <main>
       {{ content | safe }}
     </main>
@@ -33,7 +40,7 @@
     function toggleTheme() {
       const body = document.body;
       const themeIcon = document.querySelector('.theme-icon');
-      
+
       if (body.classList.contains('light-mode')) {
         body.classList.remove('light-mode');
         themeIcon.textContent = '🌙';
@@ -49,7 +56,7 @@
     document.addEventListener('DOMContentLoaded', function() {
       const savedTheme = localStorage.getItem('theme');
       const themeIcon = document.querySelector('.theme-icon');
-      
+
       if (savedTheme === 'light') {
         document.body.classList.add('light-mode');
         themeIcon.textContent = '☀️';
@@ -57,6 +64,74 @@
         themeIcon.textContent = '🌙';
       }
     });
+  </script>
+
+  <script>
+  // Client-side multi-tag filtering
+  document.addEventListener('DOMContentLoaded', () => {
+    const filters = document.querySelectorAll('.tag-filter');
+    const posts = document.querySelectorAll('.post-card[data-tags]');
+    let activeFilters = ['all'];
+
+    filters.forEach(filter => {
+      filter.addEventListener('click', (e) => {
+        e.preventDefault();
+        const clickedTag = filter.dataset.tag;
+
+        // Handle 'All' button
+        if (clickedTag === 'all') {
+          activeFilters = ['all'];
+        } else {
+          // Remove 'all' if another tag is selected
+          const allIndex = activeFilters.indexOf('all');
+          if (allIndex > -1) {
+            activeFilters.splice(allIndex, 1);
+          }
+
+          // Add or remove the clicked tag
+          const tagIndex = activeFilters.indexOf(clickedTag);
+          if (tagIndex > -1) {
+            activeFilters.splice(tagIndex, 1);
+          } else {
+            activeFilters.push(clickedTag);
+          }
+
+          // If no filters are left, default back to 'all'
+          if (activeFilters.length === 0) {
+            activeFilters.push('all');
+          }
+        }
+
+        updateActiveButtons();
+        filterPosts();
+      });
+    });
+
+    function updateActiveButtons() {
+      filters.forEach(filter => {
+        const tag = filter.dataset.tag;
+        if (activeFilters.includes(tag)) {
+          filter.classList.add('active');
+        } else {
+          filter.classList.remove('active');
+        }
+      });
+    }
+
+    function filterPosts() {
+      posts.forEach(post => {
+        const postTags = post.dataset.tags.split(',');
+
+        if (activeFilters.includes('all')) {
+          post.style.display = '';
+          return;
+        }
+
+        const isVisible = activeFilters.some(filter => postTags.includes(filter));
+        post.style.display = isVisible ? '' : 'none';
+      });
+    }
+  });
   </script>
 </body>
 </html>
