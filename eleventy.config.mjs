@@ -1,3 +1,6 @@
+import embedEverything from "eleventy-plugin-embed-everything";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+
 export default function (eleventyConfig) {
   // Copy `src/assets` to `_site/assets` except the tailwind.css source file
   eleventyConfig.addPassthroughCopy({
@@ -40,6 +43,32 @@ export default function (eleventyConfig) {
     }),
   );
 
+  // embedplugin
+  eleventyConfig.addPlugin(embedEverything, {
+    youtube: {
+      options: {
+        lite: true,
+      },
+    },
+  });
+
+  // Fixa till bilder
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    // output image formats
+    formats: ["avif", "webp", "jpeg", "jpg"],
+
+    // output image widths
+    widths: ["auto"],
+
+    // optional, attributes assigned on <img> nodes override these values
+    htmlOptions: {
+      imgAttributes: {
+        loading: "lazy",
+        decoding: "async",
+      },
+      pictureAttributes: {},
+    },
+  });
   return {
     dir: {
       input: "src",
