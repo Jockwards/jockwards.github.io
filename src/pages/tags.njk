@@ -1,0 +1,38 @@
+---
+pagination:
+  data: collections.tagList
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag | slug }}/
+layout: base.njk
+---
+
+<section>
+  <h2 class="section-header">Inlägg taggade med "{{ tag }}"</h2>
+
+  {% set postsForTag = collections[tag] | reverse %}
+  {% if postsForTag.length > 0 %}
+  <div class="posts-container">
+    {% for post in postsForTag %}
+    <article class="post-card">
+      <div class="post-header-container">
+        <h3 class="post-title">{{ post.data.title }}</h3>
+        {% if post.data.tags %}
+          <div class="post-tags">
+            {% for t in post.data.tags %}
+              <a href="/tags/{{ t | slug }}/" class="tag-link" style="background-color: {{ tagColors[t] or '#64748b' }};">{{ t }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="post-date">{{ post.date.toLocaleDateString('sv-SE') }}</div>
+      <div class="post-content">
+        {{ post.templateContent | safe }}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>Inga inlägg hittades med denna tagg.</p>
+  {% endif %}
+</section>

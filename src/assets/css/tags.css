@@ -1,0 +1,44 @@
+/* Center the tag navigation */
+.tag-nav {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Style for each tag link */
+.tag-link {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px; /* pill shape */
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0.25rem;
+    transition: transform 0.2s;
+}
+
+.tag-link:hover {
+    transform: translateY(-2px);
+}
+
+.tag-filter.active {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Container for the post header to align title and tags */
+.post-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Container for the tags on a post page */
+.post-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0; /* Prevent tags from shrinking */
+}
