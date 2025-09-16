@@ -54,13 +54,10 @@ export default function (eleventyConfig) {
 
   // Fixa till bilder
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    // output image formats
-    formats: ["avif", "webp", "jpeg", "jpg"],
-
-    // output image widths
+    formats: ["avif", "webp", "jpeg"],
     widths: ["auto"],
-
-    // optional, attributes assigned on <img> nodes override these values
+    outputDir: "_site/img/", // Output directory for generated images
+    urlPath: "/img/",        // Public URL path for images
     htmlOptions: {
       imgAttributes: {
         loading: "lazy",
