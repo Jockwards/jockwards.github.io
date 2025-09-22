@@ -264,6 +264,27 @@
         transform: scale(1.02);
     }
 
+    /* Center YouTube embeds and other video content */
+    .post-content iframe,
+    .post-content lite-youtube,
+    .post-content .embed-container {
+        display: block;
+        margin: 1.5rem auto;
+        max-width: 100%;
+    }
+
+    /* Specific styling for lite-youtube elements */
+    .post-content lite-youtube {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgb(0 0 0 / 0.3);
+        transition: transform 0.2s ease;
+    }
+
+    .post-content lite-youtube:hover {
+        transform: scale(1.02);
+    }
+
     .ascii-art {
         font-family: "Courier New", monospace;
         font-size: 0.75rem;

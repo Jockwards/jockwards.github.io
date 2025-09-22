@@ -2,11 +2,12 @@ import embedEverything from "eleventy-plugin-embed-everything";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 export default function (eleventyConfig) {
-  // Copy `src/assets` to `_site/assets` except the tailwind.css source file
+  // Copy `src/assets` to `_site/assets`
   eleventyConfig.addPassthroughCopy({
     "src/assets/favicon": "assets/favicon",
     "src/assets/media": "assets/media",
     "src/assets/css/nav.css": "assets/css/nav.css",
+    "src/assets/css/bundle.css": "assets/css/bundle.css",
   });
 
   // Ignore layout files from being processed as pages

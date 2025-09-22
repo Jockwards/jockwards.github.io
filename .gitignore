@@ -4,6 +4,9 @@ node_modules/
 # Eleventy output
 _site/
 
+# Generated CSS
+src/assets/css/bundle.css
+
 
 
 # Package lock file (optional - some prefer to track this)
