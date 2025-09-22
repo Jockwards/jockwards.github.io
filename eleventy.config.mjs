@@ -77,5 +77,8 @@ export default function (eleventyConfig) {
       layouts: "_includes/layouts",
       data: "_data",
     },
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+    dataTemplateEngine: "njk",
   };
 }

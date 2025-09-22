@@ -8,7 +8,7 @@ layout: base.njk
   {% if collections.posts.length > 0 %}
   <div class="posts-container">
     {% for post in collections.posts %}
-    <article class="post-card" data-tags="{{ post.data.tags | join(',') }}">
+    <article class="post-card" data-tags="{% if post.data.tags and post.data.tags | length > 0 %}{{ post.data.tags | join(',') }}{% endif %}">
       <div class="post-header-container">
         <h3 class="post-title">{{ post.data.title }}</h3>
         {% if post.data.tags %}
@@ -21,7 +21,11 @@ layout: base.njk
       </div>
       <div class="post-date">{{ post.date.toLocaleDateString('sv-SE') }}</div>
       <div class="post-content">
-        {{ post.templateContent | safe }}
+        {% if post.templateContent %}
+          {{ post.templateContent | safe }}
+        {% else %}
+          <em>Inget innehåll i detta inlägg.</em>
+        {% endif %}
       </div>
     </article>
     {% endfor %}

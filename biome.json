@@ -15,15 +15,18 @@
 	},
 	"linter": {
 		"enabled": true,
-		"rules": {
-			"recommended": true,
-			"complexity": {
-				"noImportantStyles": "off"
-			},
-			"suspicious": {
-				"noUnknownAtRules": "off"
+			"rules": {
+				"recommended": true,
+				"complexity": {
+					"noImportantStyles": "off"
+				},
+				"suspicious": {
+					"noUnknownAtRules": "off"
+				},
+				"markdown": {
+					"noBareUrls": "off"
+				}
 			}
-		}
 	},
 	"javascript": {
 		"formatter": {
