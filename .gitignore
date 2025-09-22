@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+# Eleventy output
+_site/
+
 
 
 # Package lock file (optional - some prefer to track this)
