@@ -1,0 +1,63 @@
+{% macro tmdbCard(tmdbData, reviewScore, headingLevel = 'h2') %}
+  {% if tmdbData %}
+    <details class="tmdb-card" open>
+      <summary class="tmdb-card-header">
+        {% if headingLevel === 'h2' %}
+          <h2 class="tmdb-card-title">
+        {% else %}
+          <h3 class="tmdb-card-title">
+        {% endif %}
+            <a href="https://www.themoviedb.org/{{ tmdbData.type }}/{{ tmdbData.id }}" target="_blank" rel="noopener noreferrer">
+              {{ tmdbData.title }}
+            </a>
+        {% if headingLevel === 'h2' %}
+          </h2>
+        {% else %}
+          </h3>
+        {% endif %}
+        {% if reviewScore %}
+          <div class="tmdb-review-score">
+            <span>⭐ {{ reviewScore }}</span>
+            <span class="tmdb-review-score-label">/10</span>
+          </div>
+        {% endif %}
+      </summary>
+      <div class="tmdb-metadata">
+        <div class="tmdb-poster">
+          {% if tmdbData.poster_path %}
+            <img src="https://image.tmdb.org/t/p/w500{{ tmdbData.poster_path }}" alt="Poster för {{ tmdbData.title }}">
+          {% endif %}
+        </div>
+        <div class="tmdb-details">
+          <div class="tmdb-info-grid">
+            <div class="tmdb-info-item">
+              <strong>Premiärdatum:</strong>
+              <span>{{ tmdbData.release_date }}</span>
+            </div>
+            {% if tmdbData.creator %}
+              <div class="tmdb-info-item">
+                <strong>Skapare:</strong>
+                <span>{{ tmdbData.creator }}</span>
+              </div>
+            {% elif tmdbData.director %}
+              <div class="tmdb-info-item">
+                <strong>Regissör:</strong>
+                <span>{{ tmdbData.director }}</span>
+              </div>
+            {% endif %}
+          </div>
+          {% if tmdbData.cast.length > 0 %}
+            <div class="tmdb-info-item">
+              <strong>Skådespelare:</strong>
+              <ul>
+                {% for actor in tmdbData.cast %}
+                  <li>{{ actor.name }} <span style="opacity: 0.7;">som {{ actor.character }}</span></li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </details>
+  {% endif %}
+{% endmacro %}
