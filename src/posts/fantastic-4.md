@@ -5,7 +5,7 @@ layout: post.njk
 description: Senaste Fantastic 4 lika ofantastisk som alla de andra
 tmdb_id: 617126
 tmdb_type: movie
-review_score: 4
+review_score: 3
 tags:
   - recensioner
 ---
