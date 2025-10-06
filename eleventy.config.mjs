@@ -28,7 +28,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "src/assets/favicon": "assets/favicon",
     "src/assets/media": "assets/media",
-    "src/assets/css/nav.css": "assets/css/nav.css",
     "src/assets/css/bundle.css": "assets/css/bundle.css",
     "src/assets/css/tmdb.css": "assets/css/tmdb.css",
     "src/assets/css/reading-list.css": "assets/css/reading-list.css",
