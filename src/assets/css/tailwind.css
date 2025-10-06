@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "./tags.css";
-@import "./tmdb.css";
 
 /* Modern Nerdy Theme - Dark Mode (Default) */
 @layer base {
