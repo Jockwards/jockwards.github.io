@@ -84,14 +84,44 @@
   gap: 8px;
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--score-color, #fbbf24);
-  background: var(--score-bg, rgba(251, 191, 36, 0.1));
   padding: 8px 16px;
   border-radius: 8px;
-  border: 2px solid var(--score-color, #fbbf24);
+  border: 2px solid;
+  transition: all 0.3s ease;
 }
 
-.light-mode .tmdb-review-score {
+/* Bronze tier: 0-3.33 */
+.tmdb-review-score.score-bronze {
+  color: var(--score-color, #cd7f32);
+  background: var(--score-bg, rgba(205, 127, 50, 0.1));
+  border-color: var(--score-color, #cd7f32);
+}
+
+.light-mode .tmdb-review-score.score-bronze {
+  --score-color: #8b5a2b;
+  --score-bg: rgba(139, 90, 43, 0.1);
+}
+
+/* Silver tier: 3.34-6.66 */
+.tmdb-review-score.score-silver {
+  color: var(--score-color, #c0c0c0);
+  background: var(--score-bg, rgba(192, 192, 192, 0.1));
+  border-color: var(--score-color, #c0c0c0);
+}
+
+.light-mode .tmdb-review-score.score-silver {
+  --score-color: #a8a8a8;
+  --score-bg: rgba(168, 168, 168, 0.1);
+}
+
+/* Gold tier: 6.67-10 */
+.tmdb-review-score.score-gold {
+  color: var(--score-color, #fbbf24);
+  background: var(--score-bg, rgba(251, 191, 36, 0.1));
+  border-color: var(--score-color, #fbbf24);
+}
+
+.light-mode .tmdb-review-score.score-gold {
   --score-color: #d97706;
   --score-bg: rgba(217, 119, 6, 0.1);
 }

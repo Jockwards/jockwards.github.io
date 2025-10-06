@@ -1,6 +1,6 @@
 ---
 title: Alien Earth
-date: 2025-10-06
+date: 2025-10-06T19:00:00
 layout: post.njk
 description: Mina tankar om Alien Earth
 tmdb_id: 157239

@@ -4,6 +4,9 @@ node_modules/
 # Eleventy output
 _site/
 
+# Eleventy cache
+.cache/
+
 # Generated CSS
 src/assets/css/bundle.css
 

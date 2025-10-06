@@ -14,7 +14,7 @@ The TMDB API integration requires an API key to fetch movie and TV show data. Th
 4. Click **Add variable** or **Edit variables**
 5. Add the following:
    - **Variable name:** `TMDB_API_KEY`
-   - **Value:** `dd7ac6a65135db9bf3184accf0caf50a`
+   - **Value:** `your-tmdb-api-key-here` (get from https://www.themoviedb.org/settings/api)
    - **Environment:** Select both **Production** and **Preview**
 6. Click **Save**
 7. Redeploy the site (go to **Deployments** → **Retry deployment** on the latest build)
@@ -80,8 +80,9 @@ npm install
 
 **Create `.env` file:**
 ```bash
-echo "TMDB_API_KEY=dd7ac6a65135db9bf3184accf0caf50a" > .env
+echo "TMDB_API_KEY=your-tmdb-api-key-here" > .env
 ```
+Replace `your-tmdb-api-key-here` with your actual API key from TMDB.
 
 **Development server:**
 ```bash
@@ -176,7 +177,7 @@ git status --short
 - Cloudflare Pages builds are triggered automatically on push to `master`
 - Build time is typically 30-60 seconds
 - Environment variables take effect immediately after saving (may need to redeploy)
-- TMDB API is free with rate limits - the key above is for personal use
+- TMDB API is free with rate limits - obtain your own API key from https://www.themoviedb.org/settings/api
 - Images are automatically optimized by Eleventy (AVIF, WebP, JPEG formats)
 
 ---

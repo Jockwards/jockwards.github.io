@@ -1,5 +1,5 @@
 require("dotenv").config();
-const fetch = require("node-fetch");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 const API_KEY = process.env.TMDB_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -10,19 +10,18 @@ async function getTmdbData(id, type) {
   }
 
   const url = `${BASE_URL}/${type}/${id}?api_key=${API_KEY}&append_to_response=credits`;
-  console.log("Fetching TMDb data from:", url);
-
+  
   try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      console.error(
-        `TMDb API error: ${response.status} ${response.statusText}`,
-      );
-      return null;
-    }
+    // Use Eleventy Fetch with caching
+    // Cache duration: 1 day (86400 seconds)
+    // Cache is stored in .cache directory
+    const data = await EleventyFetch(url, {
+      duration: "1d", // Cache for 1 day
+      type: "json",
+      verbose: true, // Shows "[11ty/eleventy-fetch]" messages
+    });
 
-    const data = await response.json();
-    console.log("TMDb API response:", data);
+    console.log("TMDb data retrieved (cached or fresh):", { id, type, title: data.title || data.name });
 
     // For movies, get director. For TV shows, get creator
     const director = type === 'movie' ? getDirector(data.credits?.crew) : null;
@@ -40,7 +39,7 @@ async function getTmdbData(id, type) {
       title: data.title || data.name, // Movie title or TV show name
       id: id,
     };
-    console.log("Returning TMDb data:", returnData);
+    
     return returnData;
   } catch (error) {
     console.error("Error fetching TMDb data:", error);

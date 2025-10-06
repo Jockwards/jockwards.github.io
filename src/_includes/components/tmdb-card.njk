@@ -16,7 +16,8 @@
           </h3>
         {% endif %}
         {% if reviewScore %}
-          <div class="tmdb-review-score">
+          {% set scoreClass = 'score-bronze' if reviewScore <= 3.33 else ('score-silver' if reviewScore <= 6.66 else 'score-gold') %}
+          <div class="tmdb-review-score {{ scoreClass }}">
             <span>⭐ {{ reviewScore }}</span>
             <span class="tmdb-review-score-label">/10</span>
           </div>
