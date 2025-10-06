@@ -1,13 +1,28 @@
 import embedEverything from "eleventy-plugin-embed-everything";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
+const getTmdbData = require("./src/_data/tmdb.cjs");
 
 export default function (eleventyConfig) {
+  // Add computed data for TMDB - this will be available on each page/post
+  eleventyConfig.addGlobalData("eleventyComputed", {
+    tmdbData: async (data) => {
+      if (data.tmdb_id && data.tmdb_type) {
+        return await getTmdbData(data.tmdb_id, data.tmdb_type);
+      }
+      return null;
+    },
+  });
+
   // Copy `src/assets` to `_site/assets`
   eleventyConfig.addPassthroughCopy({
     "src/assets/favicon": "assets/favicon",
     "src/assets/media": "assets/media",
     "src/assets/css/nav.css": "assets/css/nav.css",
     "src/assets/css/bundle.css": "assets/css/bundle.css",
+    "src/assets/css/tmdb.css": "assets/css/tmdb.css",
   });
 
   // Ignore layout files from being processed as pages
@@ -58,7 +73,7 @@ export default function (eleventyConfig) {
     formats: ["avif", "webp", "jpeg"],
     widths: ["auto"],
     outputDir: "_site/img/", // Output directory for generated images
-    urlPath: "/img/",        // Public URL path for images
+    urlPath: "/img/", // Public URL path for images
     htmlOptions: {
       imgAttributes: {
         loading: "lazy",

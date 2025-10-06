@@ -27,9 +27,11 @@
 	},
 	"dependencies": {
 		"@11ty/eleventy-img": "^6.0.4",
+		"dotenv": "^17.2.3",
 		"eleventy-plugin-embed-everything": "^1.21.0",
 		"eleventy-plugin-youtube-embed": "^1.13.0",
 		"n": "^10.1.0",
+		"node-fetch": "^2.7.0",
 		"stable": "^0.1.8"
 	},
 	"type": "module"

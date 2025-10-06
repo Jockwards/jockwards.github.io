@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 ---
+{% from "components/tmdb-card.njk" import tmdbCard %}
 
 <article class="post-card">
   <div class="post-header-container">
@@ -14,6 +15,11 @@ layout: base.njk
     {% endif %}
   </div>
   <div class="post-date">{{ date.toLocaleDateString('sv-SE') }}</div>
+
+  {% if tmdb_id and tmdb_type %}
+    {{ tmdbCard(tmdbData, review_score, 'h2') }}
+  {% endif %}
+
   <div class="post-content">
     {{ content | safe }}
   </div>

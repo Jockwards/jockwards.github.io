@@ -1,16 +1,18 @@
 ---
 layout: base.njk
 ---
+{% from "components/tmdb-card.njk" import tmdbCard %}
 
 <section>
   <h2 class="section-header">Senaste inlägg</h2>
 
-  {% if collections.posts.length > 0 %}
   <div class="posts-container">
     {% for post in collections.posts %}
     <article class="post-card" data-tags="{% if post.data.tags and post.data.tags | length > 0 %}{{ post.data.tags | join(',') }}{% endif %}">
       <div class="post-header-container">
-        <h3 class="post-title">{{ post.data.title }}</h3>
+        <h3 class="post-title">
+          <a href="{{ post.url }}" class="post-title-link">{{ post.data.title }}</a>
+        </h3>
         {% if post.data.tags %}
           <div class="post-tags">
             {% for tag in post.data.tags %}
@@ -20,6 +22,11 @@ layout: base.njk
         {% endif %}
       </div>
       <div class="post-date">{{ post.date.toLocaleDateString('sv-SE') }}</div>
+      
+      {% if post.data.tmdb_id and post.data.tmdb_type %}
+        {{ tmdbCard(post.data.tmdbData, post.data.review_score, 'h3') }}
+      {% endif %}
+      
       <div class="post-content">
         {% if post.templateContent %}
           {{ post.templateContent | safe }}
@@ -30,16 +37,4 @@ layout: base.njk
     </article>
     {% endfor %}
   </div>
-  {% else %}
-  <div class="post-card">
-    <h3 class="post-title">Välkommen!</h3>
-    <div class="post-date">{% datetime %}</div>
-    <div class="post-content">
-      <p>Hej och välkommen till min lilla hörna av internet! 👋</p>
-      <p>Här kommer jag att dela med mig av tankar om programmering, teknik och andra nördiga ämnen.
-        Håll utkik efter fler inlägg framöver!</p>
-      <p><code>console.log("Mer innehåll kommer snart...");</code></p>
-    </div>
-  </div>
-  {% endif %}
 </section>
