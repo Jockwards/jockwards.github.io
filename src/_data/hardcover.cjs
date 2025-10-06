@@ -9,9 +9,16 @@ async function getHardcoverData(id) {
     return null;
   }
 
+  // Ensure id is a number and handle edge cases
+  const bookId = parseInt(id, 10);
+  if (isNaN(bookId)) {
+    // Silently return null for invalid IDs (happens during template processing)
+    return null;
+  }
+
   const query = `
     query {
-      books(where: {id: {_eq: ${id}}}) {
+      books(where: {id: {_eq: ${bookId}}}) {
         id
         slug
         title
@@ -30,9 +37,14 @@ async function getHardcoverData(id) {
     }
   `;
 
+  console.log("Fetching Hardcover book ID:", bookId);
+
   try {
     // Use Eleventy Fetch with caching
-    const data = await EleventyFetch(API_URL, {
+    // Create a unique cache key per book ID
+    const cacheKey = `${API_URL}?bookId=${bookId}`;
+    
+    const data = await EleventyFetch(cacheKey, {
       duration: "1d",
       type: "json",
       verbose: true,

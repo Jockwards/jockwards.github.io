@@ -16,7 +16,8 @@ export default function (eleventyConfig) {
       return null;
     },
     hardcoverData: async (data) => {
-      if (data.hardcover_id) {
+      // Only process if hardcover_id exists and is a valid value
+      if (data.hardcover_id && typeof data.hardcover_id !== 'object') {
         return await getHardcoverData(data.hardcover_id);
       }
       return null;
