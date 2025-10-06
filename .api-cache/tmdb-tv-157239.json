@@ -1,0 +1,76 @@
+{
+  "poster_path": "/yueXS3q8BtoWekcHOATFHicLl3e.jpg",
+  "release_date": "2025-08-12",
+  "cast": [
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 2754753,
+      "known_for_department": "Acting",
+      "name": "Sydney Chandler",
+      "original_name": "Sydney Chandler",
+      "popularity": 3.5113,
+      "profile_path": "/21rhe9mXRHkXa6cKyN07jxFSI2C.jpg",
+      "character": "Wendy/Marcy",
+      "credit_id": "64506c3d6d1bb2010e585eb2",
+      "order": 0
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 1379277,
+      "known_for_department": "Acting",
+      "name": "Alex Lawther",
+      "original_name": "Alex Lawther",
+      "popularity": 2.2069,
+      "profile_path": "/zZZP8VrYIYXBZfoRxSYeAd4phsO.jpg",
+      "character": "Joe DiMaggio Hermit",
+      "credit_id": "64ba2a47ab684900e230fdb0",
+      "order": 1
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 33449,
+      "known_for_department": "Acting",
+      "name": "Essie Davis",
+      "original_name": "Essie Davis",
+      "popularity": 2.1823,
+      "profile_path": "/mwJrRr9bdlUZFZBNDTgWxAKAdqR.jpg",
+      "character": "Dame Sylvia",
+      "credit_id": "64ba2a95efd3c20140041f4f",
+      "order": 2
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 2500348,
+      "known_for_department": "Acting",
+      "name": "Samuel Blenkin",
+      "original_name": "Samuel Blenkin",
+      "popularity": 2.057,
+      "profile_path": "/xQuFRXQTtbyQMXdAVvVib4pOxFm.jpg",
+      "character": "Boy Kavalier",
+      "credit_id": "64ba2a656aa8e000b0b10f32",
+      "order": 3
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 41044,
+      "known_for_department": "Acting",
+      "name": "Babou Ceesay",
+      "original_name": "Babou Ceesay",
+      "popularity": 1.0916,
+      "profile_path": "/nhHcSiJc9U9JBzGJZ3QVS9jEc2b.jpg",
+      "character": "Kumi Morrow",
+      "credit_id": "65678c6a6c0b3600c7462ad9",
+      "order": 4
+    }
+  ],
+  "director": null,
+  "creator": "Noah Hawley",
+  "type": "tv",
+  "title": "Alien: Earth",
+  "id": 157239
+}

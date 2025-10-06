@@ -1,8 +1,11 @@
 require("dotenv").config();
 const EleventyFetch = require("@11ty/eleventy-fetch");
+const fs = require("fs");
+const path = require("path");
 
 const API_TOKEN = process.env.HARDCOVER_API_TOKEN;
 const API_URL = "https://api.hardcover.app/v1/graphql";
+const CACHE_DIR = path.join(__dirname, "../../.api-cache");
 
 async function getHardcoverData(id) {
   if (!id) {
@@ -14,6 +17,19 @@ async function getHardcoverData(id) {
   if (isNaN(bookId)) {
     // Silently return null for invalid IDs (happens during template processing)
     return null;
+  }
+
+  const cacheFile = path.join(CACHE_DIR, `hardcover-${bookId}.json`);
+
+  // Try committed cache first
+  if (fs.existsSync(cacheFile)) {
+    try {
+      const cached = JSON.parse(fs.readFileSync(cacheFile, "utf8"));
+      console.log(`Using committed cache for Hardcover book ${bookId}`);
+      return cached;
+    } catch (e) {
+      console.error("Error reading cache file:", e);
+    }
   }
 
   const query = `
@@ -37,17 +53,15 @@ async function getHardcoverData(id) {
     }
   `;
 
-  console.log("Fetching Hardcover book ID:", bookId);
+  console.log("Fetching from Hardcover API:", bookId);
 
   try {
-    // Use Eleventy Fetch with caching
-    // Create a unique cache key per book ID
     const cacheKey = `${API_URL}?bookId=${bookId}`;
     
     const data = await EleventyFetch(cacheKey, {
       duration: "1d",
       type: "json",
-      verbose: true,
+      verbose: false,
       fetchOptions: {
         method: "POST",
         headers: {
@@ -64,12 +78,11 @@ async function getHardcoverData(id) {
     }
 
     if (!data.data?.books?.[0]) {
-      console.error("No book found with ID:", id);
+      console.error("No book found with ID:", bookId);
       return null;
     }
 
     const book = data.data.books[0];
-    console.log("Hardcover data retrieved:", { id, title: book.title });
 
     const returnData = {
       cover_url: book.image?.url || null,
@@ -78,10 +91,17 @@ async function getHardcoverData(id) {
       authors: book.contributions?.map(c => c.author?.name).filter(Boolean) || [],
       title: book.title,
       subtitle: book.subtitle,
-      id: id,
+      id: bookId,
       slug: book.slug,
       type: 'book',
     };
+
+    // Save to committed cache
+    if (!fs.existsSync(CACHE_DIR)) {
+      fs.mkdirSync(CACHE_DIR, { recursive: true });
+    }
+    fs.writeFileSync(cacheFile, JSON.stringify(returnData, null, 2));
+    console.log(`Saved to committed cache: ${cacheFile}`);
 
     return returnData;
   } catch (error) {

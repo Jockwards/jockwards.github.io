@@ -1,0 +1,81 @@
+{
+  "poster_path": "/cm8TNGBGG0aBfWj0LgrESHv8tir.jpg",
+  "release_date": "2025-07-22",
+  "cast": [
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 1253360,
+      "known_for_department": "Acting",
+      "name": "Pedro Pascal",
+      "original_name": "Pedro Pascal",
+      "popularity": 9.0003,
+      "profile_path": "/oKcMbVn0NJTNzQt0ClKKvVXkm60.jpg",
+      "cast_id": 23,
+      "character": "Reed Richards / Mister Fantastic",
+      "credit_id": "65cce4a4e210230162c35b9f",
+      "order": 0
+    },
+    {
+      "adult": false,
+      "gender": 1,
+      "id": 556356,
+      "known_for_department": "Acting",
+      "name": "Vanessa Kirby",
+      "original_name": "Vanessa Kirby",
+      "popularity": 5.8169,
+      "profile_path": "/a8a9U00KL2JJkkekzhNnueIGKKF.jpg",
+      "cast_id": 24,
+      "character": "Sue Storm / Invisible Woman",
+      "credit_id": "65cce4c0efd3c2017c37d90f",
+      "order": 1
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 21042,
+      "known_for_department": "Acting",
+      "name": "Ebon Moss-Bachrach",
+      "original_name": "Ebon Moss-Bachrach",
+      "popularity": 3.0372,
+      "profile_path": "/xD8GVNayMpiTZxLfahy2DseYcQq.jpg",
+      "cast_id": 26,
+      "character": "Ben Grimm / The Thing",
+      "credit_id": "65cce4d813af5f017c9fed78",
+      "order": 2
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 1597365,
+      "known_for_department": "Acting",
+      "name": "Joseph Quinn",
+      "original_name": "Joseph Quinn",
+      "popularity": 5.2399,
+      "profile_path": "/zshhuioZaH8S5ZKdMcojzWi1ntl.jpg",
+      "cast_id": 27,
+      "character": "Johnny Storm / Human Torch",
+      "credit_id": "65cce4e7e210230185c40b56",
+      "order": 3
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 202032,
+      "known_for_department": "Acting",
+      "name": "Ralph Ineson",
+      "original_name": "Ralph Ineson",
+      "popularity": 2.8988,
+      "profile_path": "/sn3ONJw2pJxMHiCqPwvkaiWr5mc.jpg",
+      "cast_id": 38,
+      "character": "Galactus",
+      "credit_id": "663d48d191ead4bae330077f",
+      "order": 4
+    }
+  ],
+  "director": "Matt Shakman",
+  "creator": null,
+  "type": "movie",
+  "title": "The Fantastic 4: First Steps",
+  "id": 617126
+}

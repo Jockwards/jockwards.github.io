@@ -1,29 +1,41 @@
 require("dotenv").config();
 const EleventyFetch = require("@11ty/eleventy-fetch");
+const fs = require("fs");
+const path = require("path");
 
 const API_KEY = process.env.TMDB_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
+const CACHE_DIR = path.join(__dirname, "../../.api-cache");
 
 async function getTmdbData(id, type) {
   if (!id || !type) {
     return null;
   }
 
+  const cacheFile = path.join(CACHE_DIR, `tmdb-${type}-${id}.json`);
+
+  // Try committed cache first (for Cloudflare builds)
+  if (fs.existsSync(cacheFile)) {
+    try {
+      const cached = JSON.parse(fs.readFileSync(cacheFile, "utf8"));
+      console.log(`Using committed cache for TMDB ${type}/${id}`);
+      return cached;
+    } catch (e) {
+      console.error("Error reading cache file:", e);
+    }
+  }
+
+  // Fetch from API if cache doesn't exist
   const url = `${BASE_URL}/${type}/${id}?api_key=${API_KEY}&append_to_response=credits`;
   
   try {
-    // Use Eleventy Fetch with caching
-    // Cache duration: 1 day (86400 seconds)
-    // Cache is stored in .cache directory
+    console.log(`Fetching from TMDB API: ${type}/${id}`);
     const data = await EleventyFetch(url, {
-      duration: "1d", // Cache for 1 day
+      duration: "1d",
       type: "json",
-      verbose: true, // Shows "[11ty/eleventy-fetch]" messages
+      verbose: false,
     });
 
-    console.log("TMDb data retrieved (cached or fresh):", { id, type, title: data.title || data.name });
-
-    // For movies, get director. For TV shows, get creator
     const director = type === 'movie' ? getDirector(data.credits?.crew) : null;
     const creator = type === 'tv' && data.created_by?.length > 0 
       ? data.created_by.map(c => c.name).join(', ') 
@@ -32,13 +44,21 @@ async function getTmdbData(id, type) {
     const returnData = {
       poster_path: data.poster_path,
       release_date: data.release_date || data.first_air_date,
-      cast: data.credits?.cast?.slice(0, 5) || [], // Get the first 5 cast members
+      cast: data.credits?.cast?.slice(0, 5) || [],
       director: director,
       creator: creator,
       type: type,
-      title: data.title || data.name, // Movie title or TV show name
+      title: data.title || data.name,
       id: id,
+      slug: data.slug,
     };
+
+    // Save to committed cache
+    if (!fs.existsSync(CACHE_DIR)) {
+      fs.mkdirSync(CACHE_DIR, { recursive: true });
+    }
+    fs.writeFileSync(cacheFile, JSON.stringify(returnData, null, 2));
+    console.log(`Saved to committed cache: ${cacheFile}`);
     
     return returnData;
   } catch (error) {
