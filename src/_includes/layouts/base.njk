@@ -20,6 +20,8 @@
   
   <link rel="stylesheet" href="/assets/css/bundle.css">
   <link rel="stylesheet" href="/assets/css/tmdb.css">
+  <link rel="stylesheet" href="/assets/css/reading-list.css">
+  <link rel="stylesheet" href="/assets/css/blog.css">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon/jp-favicon.svg">
 </head>
 <body>
@@ -32,6 +34,12 @@
         </button>
       </div>
       <p class="site-subtitle">En blogg om foto, teknik och slumpmässiga tankar</p>
+      
+      <nav class="main-nav">
+        <a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}">Hem</a>
+        <a href="/pages/blog/" class="nav-link {% if page.url == '/pages/blog/' %}active{% endif %}">Blogg</a>
+        <a href="/pages/reading-list/" class="nav-link {% if page.url == '/pages/reading-list/' %}active{% endif %}">Läslista</a>
+      </nav>
     </header>
 
     <nav class="tag-nav" role="navigation" aria-label="Filtrera inlägg efter kategorier">

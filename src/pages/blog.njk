@@ -1,0 +1,39 @@
+---
+layout: base.njk
+title: Blogg
+description: Alla blogginlägg
+---
+
+<section>
+  <h2 class="section-header">Alla Inlägg</h2>
+
+  <div class="blog-list">
+    {% for post in collections.posts %}
+    <article class="blog-item">
+      <a href="{{ post.url }}" class="blog-link">
+        <div class="blog-main">
+          <div class="blog-date">{{ post.date.toLocaleDateString('sv-SE', { year: 'numeric', month: 'short', day: 'numeric' }) }}</div>
+          <h3 class="blog-title">{{ post.data.title }}</h3>
+        </div>
+        
+        <div class="blog-meta">
+          {% if post.data.review_score %}
+            {% set scoreClass = 'score-bronze' if post.data.review_score <= 3.33 else ('score-silver' if post.data.review_score <= 6.66 else 'score-gold') %}
+            <div class="blog-score {{ scoreClass }}">
+              <span>⭐ {{ post.data.review_score }}</span>
+            </div>
+          {% endif %}
+          
+          {% if post.data.tags %}
+            <div class="blog-tags">
+              {% for tag in post.data.tags %}
+                <span class="blog-tag" style="background-color: {{ tagColors[tag] or '#64748b' }};">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+</section>

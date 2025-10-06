@@ -1,0 +1,117 @@
+/* Reading List Styles */
+.reading-section {
+  margin-bottom: 3rem;
+}
+
+.reading-section-title {
+  font-size: 1.25rem;
+  color: var(--text-primary, #00ff00);
+  margin: 1.5rem 0 1rem 0;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.light-mode .reading-section-title {
+  --text-primary: #059669;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+}
+
+.book-item {
+  transition: transform 0.2s ease;
+}
+
+.book-item:hover {
+  transform: translateY(-4px);
+}
+
+.book-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.book-cover {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.book-item:hover .book-cover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.light-mode .book-cover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .book-item:hover .book-cover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.book-cover-placeholder {
+  width: 100%;
+  aspect-ratio: 2/3;
+  background: var(--placeholder-bg, #334155);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--placeholder-text, #94a3b8);
+}
+
+.light-mode .book-cover-placeholder {
+  --placeholder-bg: #e2e8f0;
+  --placeholder-text: #64748b;
+}
+
+.book-info {
+  margin-top: 0.5rem;
+}
+
+.book-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--book-title, #e2e8f0);
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.light-mode .book-title {
+  --book-title: #1e293b;
+}
+
+.book-author {
+  font-size: 0.75rem;
+  color: var(--book-author, #94a3b8);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.light-mode .book-author {
+  --book-author: #64748b;
+}

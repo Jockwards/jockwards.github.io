@@ -2,6 +2,7 @@
 layout: base.njk
 ---
 {% from "components/tmdb-card.njk" import tmdbCard %}
+{% from "components/book-card.njk" import bookCard %}
 
 <section>
   <h2 class="section-header">Senaste inlägg</h2>
@@ -25,6 +26,8 @@ layout: base.njk
       
       {% if post.data.tmdb_id and post.data.tmdb_type %}
         {{ tmdbCard(post.data.tmdbData, post.data.review_score, 'h3') }}
+      {% elif post.data.hardcover_id %}
+        {{ bookCard(post.data.hardcoverData, post.data.review_score, 'h3') }}
       {% endif %}
       
       <div class="post-content">

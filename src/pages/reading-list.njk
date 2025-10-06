@@ -1,0 +1,109 @@
+---
+layout: base.njk
+title: Läslista
+description: Mina böcker från Hardcover
+---
+
+<section>
+  <h2 class="section-header">Läslista</h2>
+  
+  {% if readingList.wantToRead.length > 0 %}
+  <div class="reading-section">
+    <h3 class="reading-section-title">Vill Läsa</h3>
+    <div class="books-grid">
+      {% for book in readingList.wantToRead %}
+      <div class="book-item">
+        <a href="https://hardcover.app/books/{{ book.slug }}" target="_blank" rel="noopener noreferrer" class="book-link">
+          {% if book.cover %}
+            <img src="{{ book.cover }}" alt="Omslag för {{ book.title }}" class="book-cover">
+          {% else %}
+            <div class="book-cover-placeholder">{{ book.title }}</div>
+          {% endif %}
+          <div class="book-info">
+            <div class="book-title">{{ book.title }}</div>
+            {% if book.authors.length > 0 %}
+              <div class="book-author">{{ book.authors | join(', ') }}</div>
+            {% endif %}
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if readingList.currentlyReading.length > 0 %}
+  <div class="reading-section">
+    <h3 class="reading-section-title">Läser Nu</h3>
+    <div class="books-grid">
+      {% for book in readingList.currentlyReading %}
+      <div class="book-item">
+        <a href="https://hardcover.app/books/{{ book.slug }}" target="_blank" rel="noopener noreferrer" class="book-link">
+          {% if book.cover %}
+            <img src="{{ book.cover }}" alt="Omslag för {{ book.title }}" class="book-cover">
+          {% else %}
+            <div class="book-cover-placeholder">{{ book.title }}</div>
+          {% endif %}
+          <div class="book-info">
+            <div class="book-title">{{ book.title }}</div>
+            {% if book.authors.length > 0 %}
+              <div class="book-author">{{ book.authors | join(', ') }}</div>
+            {% endif %}
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if readingList.read.length > 0 %}
+  <div class="reading-section">
+    <h3 class="reading-section-title">Lästa</h3>
+    <div class="books-grid">
+      {% for book in readingList.read %}
+      <div class="book-item">
+        <a href="https://hardcover.app/books/{{ book.slug }}" target="_blank" rel="noopener noreferrer" class="book-link">
+          {% if book.cover %}
+            <img src="{{ book.cover }}" alt="Omslag för {{ book.title }}" class="book-cover">
+          {% else %}
+            <div class="book-cover-placeholder">{{ book.title }}</div>
+          {% endif %}
+          <div class="book-info">
+            <div class="book-title">{{ book.title }}</div>
+            {% if book.authors.length > 0 %}
+              <div class="book-author">{{ book.authors | join(', ') }}</div>
+            {% endif %}
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if readingList.didNotFinish.length > 0 %}
+  <div class="reading-section">
+    <h3 class="reading-section-title">Lade Ner</h3>
+    <div class="books-grid">
+      {% for book in readingList.didNotFinish %}
+      <div class="book-item">
+        <a href="https://hardcover.app/books/{{ book.slug }}" target="_blank" rel="noopener noreferrer" class="book-link">
+          {% if book.cover %}
+            <img src="{{ book.cover }}" alt="Omslag för {{ book.title }}" class="book-cover">
+          {% else %}
+            <div class="book-cover-placeholder">{{ book.title }}</div>
+          {% endif %}
+          <div class="book-info">
+            <div class="book-title">{{ book.title }}</div>
+            {% if book.authors.length > 0 %}
+              <div class="book-author">{{ book.authors | join(', ') }}</div>
+            {% endif %}
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</section>

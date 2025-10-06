@@ -4,13 +4,20 @@ import { createRequire } from "module";
 
 const require = createRequire(import.meta.url);
 const getTmdbData = require("./src/_data/tmdb.cjs");
+const getHardcoverData = require("./src/_data/hardcover.cjs");
 
 export default function (eleventyConfig) {
-  // Add computed data for TMDB - this will be available on each page/post
+  // Add computed data for TMDB and Hardcover
   eleventyConfig.addGlobalData("eleventyComputed", {
     tmdbData: async (data) => {
       if (data.tmdb_id && data.tmdb_type) {
         return await getTmdbData(data.tmdb_id, data.tmdb_type);
+      }
+      return null;
+    },
+    hardcoverData: async (data) => {
+      if (data.hardcover_id) {
+        return await getHardcoverData(data.hardcover_id);
       }
       return null;
     },
@@ -23,6 +30,8 @@ export default function (eleventyConfig) {
     "src/assets/css/nav.css": "assets/css/nav.css",
     "src/assets/css/bundle.css": "assets/css/bundle.css",
     "src/assets/css/tmdb.css": "assets/css/tmdb.css",
+    "src/assets/css/reading-list.css": "assets/css/reading-list.css",
+    "src/assets/css/blog.css": "assets/css/blog.css",
   });
 
   // Ignore layout files from being processed as pages
