@@ -13,6 +13,43 @@ const STATUSES = {
   4: { name: "Did Not Finish", key: "didNotFinish" },
 };
 
+function groupByAuthorAndSeries(books) {
+  const grouped = {};
+  
+  books.forEach(book => {
+    const author = book.authors[0] || 'Unknown Author';
+    
+    if (!grouped[author]) {
+      grouped[author] = {
+        standalone: [],
+        series: {}
+      };
+    }
+    
+    if (book.series) {
+      if (!grouped[author].series[book.series]) {
+        grouped[author].series[book.series] = [];
+      }
+      grouped[author].series[book.series].push(book);
+    } else {
+      grouped[author].standalone.push(book);
+    }
+  });
+  
+  // Sort series books by position
+  Object.keys(grouped).forEach(author => {
+    Object.keys(grouped[author].series).forEach(seriesName => {
+      grouped[author].series[seriesName].sort((a, b) => {
+        const posA = parseFloat(a.seriesPosition) || 0;
+        const posB = parseFloat(b.seriesPosition) || 0;
+        return posA - posB;
+      });
+    });
+  });
+  
+  return grouped;
+}
+
 async function getReadingList() {
   const query = `
     query {
@@ -29,6 +66,12 @@ async function getReadingList() {
             author {
               name
             }
+          }
+          book_series {
+            series {
+              name
+            }
+            position
           }
         }
       }
@@ -69,15 +112,21 @@ async function getReadingList() {
     userBooks.forEach(item => {
       const status = STATUSES[item.status_id];
       if (status && groupedBooks[status.key]) {
+        const bookSeries = item.book.book_series?.[0];
         groupedBooks[status.key].push({
           id: item.book.id,
           slug: item.book.slug,
           title: item.book.title,
           cover: item.book.image?.url || null,
           authors: item.book.contributions?.map(c => c.author?.name).filter(Boolean) || [],
+          series: bookSeries?.series?.name || null,
+          seriesPosition: bookSeries?.position || null,
         });
       }
     });
+
+    // Group read books by author and series
+    groupedBooks.readGrouped = groupByAuthorAndSeries(groupedBooks.read);
 
     return groupedBooks;
   } catch (error) {

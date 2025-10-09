@@ -42,13 +42,6 @@
       </nav>
     </header>
 
-    <nav class="tag-nav" role="navigation" aria-label="Filtrera inlägg efter kategorier">
-      <a href="#" class="tag-link tag-filter active" data-tag="all" style="background-color: #64748b;" aria-label="Visa alla inlägg">Alla</a>
-      {% for tag in collections.tagList %}
-        <a href="#" class="tag-link tag-filter" data-tag="{{ tag }}" style="background-color: {{ tagColors[tag] or '#64748b' }};" aria-label="Filtrera inlägg för {{ tag }}">{{ tag }}</a>
-      {% endfor %}
-    </nav>
-
     <main>
       {{ content | safe }}
     </main>
@@ -59,7 +52,7 @@
   </div>
 
   <script>
-    // Initialize theme and tag filtering when DOM is loaded
+    // Initialize theme when DOM is loaded
     document.addEventListener('DOMContentLoaded', function() {
       // Theme toggle functionality
       const themeIcon = document.querySelector('.theme-icon');
@@ -71,70 +64,6 @@
         themeIcon.textContent = '☀️';
       } else {
         themeIcon.textContent = '🌙';
-      }
-
-      // Multi-tag filtering functionality
-      const filters = document.querySelectorAll('.tag-filter');
-      const posts = document.querySelectorAll('.post-card[data-tags]');
-      let activeFilters = ['all'];
-
-      filters.forEach(filter => {
-        filter.addEventListener('click', (e) => {
-          e.preventDefault();
-          const clickedTag = filter.dataset.tag;
-
-          // Handle 'All' button
-          if (clickedTag === 'all') {
-            activeFilters = ['all'];
-          } else {
-            // Remove 'all' if another tag is selected
-            const allIndex = activeFilters.indexOf('all');
-            if (allIndex > -1) {
-              activeFilters.splice(allIndex, 1);
-            }
-
-            // Add or remove the clicked tag
-            const tagIndex = activeFilters.indexOf(clickedTag);
-            if (tagIndex > -1) {
-              activeFilters.splice(tagIndex, 1);
-            } else {
-              activeFilters.push(clickedTag);
-            }
-
-            // If no filters are left, default back to 'all'
-            if (activeFilters.length === 0) {
-              activeFilters.push('all');
-            }
-          }
-
-          updateActiveButtons();
-          filterPosts();
-        });
-      });
-
-      function updateActiveButtons() {
-        filters.forEach(filter => {
-          const tag = filter.dataset.tag;
-          if (activeFilters.includes(tag)) {
-            filter.classList.add('active');
-          } else {
-            filter.classList.remove('active');
-          }
-        });
-      }
-
-      function filterPosts() {
-        posts.forEach(post => {
-          const postTags = post.dataset.tags.split(',');
-
-          if (activeFilters.includes('all')) {
-            post.style.display = '';
-            return;
-          }
-
-          const isVisible = activeFilters.some(filter => postTags.includes(filter));
-          post.style.display = isVisible ? '' : 'none';
-        });
       }
     });
 

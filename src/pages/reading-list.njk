@@ -60,22 +60,45 @@ description: Mina böcker från Hardcover
   {% if readingList.read.length > 0 %}
   <div class="reading-section">
     <h3 class="reading-section-title">Lästa</h3>
-    <div class="books-grid">
-      {% for book in readingList.read %}
-      <div class="book-item">
-        <a href="https://hardcover.app/books/{{ book.slug }}" target="_blank" rel="noopener noreferrer" class="book-link">
-          {% if book.cover %}
-            <img src="{{ book.cover }}" alt="Omslag för {{ book.title }}" class="book-cover">
-          {% else %}
-            <div class="book-cover-placeholder">{{ book.title }}</div>
-          {% endif %}
-          <div class="book-info">
-            <div class="book-title">{{ book.title }}</div>
-            {% if book.authors.length > 0 %}
-              <div class="book-author">{{ book.authors | join(', ') }}</div>
-            {% endif %}
-          </div>
-        </a>
+    <div class="books-list">
+      {% for author, authorData in readingList.readGrouped | dictsort %}
+      <div class="author-group">
+        <h4 class="author-name">{{ author }}</h4>
+        
+        {# Display series first #}
+        {% for seriesName, seriesBooks in authorData.series %}
+        <div class="series-group">
+          <h5 class="series-name">{{ seriesName }}</h5>
+          <ul class="book-list">
+            {% for book in seriesBooks %}
+            <li class="book-list-item">
+              <a href="https://hardcover.app/books/{{ book.slug }}" target="_blank" rel="noopener noreferrer" class="book-list-link">
+                {% if book.cover %}
+                  <img src="{{ book.cover }}" alt="Omslag för {{ book.title }}" class="book-list-cover">
+                {% endif %}
+                <span class="book-list-title">{{ book.title }}{% if book.seriesPosition %} (#{{ book.seriesPosition }}){% endif %}</span>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+        
+        {# Display standalone books #}
+        {% if authorData.standalone.length > 0 %}
+        <ul class="book-list">
+          {% for book in authorData.standalone %}
+          <li class="book-list-item">
+            <a href="https://hardcover.app/books/{{ book.slug }}" target="_blank" rel="noopener noreferrer" class="book-list-link">
+              {% if book.cover %}
+                <img src="{{ book.cover }}" alt="Omslag för {{ book.title }}" class="book-list-cover">
+              {% endif %}
+              <span class="book-list-title">{{ book.title }}</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
       </div>
       {% endfor %}
     </div>
