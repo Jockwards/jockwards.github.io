@@ -7,7 +7,7 @@ tags:
   - övrigt
 ---
 
-Throwback till den dagen då jag somnade på bussen, vaknade till 4 stationer för tidigt men trodde att det här var min hållplats så jag hoppade av. Insåg att jag hoppat av på fel ställe, gick 3 min till en elscooter. Inser att den har punka. Går 6 min till nästa scooter men går vilse och håller på att kissa på mig. Kissar i en buske, blir sedd. Går vilse lite till innan jag hittar scootern. Åker hem.
+Throwback till den dagen då jag somnade på bussen, men som tur var vaknade jag precis när bussen stannade på min hållplats. Stiger av. Inser att detta inte alls är min hållplats. Av ren skam och förvirring så vågar jag inte hoppa på bussen igen. Men en idé formas i min skalle. Jag tar en elscooter! 3 min till närmsta scooter, säger appen. OK. Låser upp den. -10kr. Inser att den har punka. Kollar appen igen. 6 min till nästa scooter, säger den. Men går vilse och håller på att kissa på mig. Kissar i en buske, blir sedd. Går vilse lite till innan jag hittar scootern. Åker hem.
 
 Hade varit snabbare att börja gå direkt, eller vad vet jag, ta nästa buss. Å när jag säger throwback så menar jag i tisdags.
 
