@@ -1,0 +1,50 @@
+{
+  "poster_path": "/2XSHwBHIvIDPpbcH4ntQIItlThG.jpg",
+  "release_date": "2026-01-27",
+  "cast": [
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 1639847,
+      "known_for_department": "Acting",
+      "name": "Yahya Abdul-Mateen II",
+      "original_name": "Yahya Abdul-Mateen II",
+      "popularity": 3.966,
+      "profile_path": "/79VdVjUoiYGcgjOT9UmE5XIpoZM.jpg",
+      "character": "Simon Williams",
+      "credit_id": "63601c753396b9007ad02007",
+      "order": 0
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 457386,
+      "known_for_department": "Acting",
+      "name": "Arian Moayed",
+      "original_name": "Arian Moayed",
+      "popularity": 2.3648,
+      "profile_path": "/ApY4Ql2xGnzy8LeWqcntAbEQHiB.jpg",
+      "character": "Agent Cleary",
+      "credit_id": "69798bb75e64ac2b74ef3863",
+      "order": 1
+    },
+    {
+      "adult": false,
+      "gender": 2,
+      "id": 2282,
+      "known_for_department": "Acting",
+      "name": "Ben Kingsley",
+      "original_name": "Ben Kingsley",
+      "popularity": 5.7359,
+      "profile_path": "/vQtBqpF2HDdzbfXHDzR4u37i1Ac.jpg",
+      "character": "Trevor Slattery",
+      "credit_id": "630e83b854508d007dae48b1",
+      "order": 2
+    }
+  ],
+  "director": null,
+  "creator": "Andrew Guest, Destin Daniel Cretton",
+  "type": "tv",
+  "title": "Wonder Man",
+  "id": 198178
+}
