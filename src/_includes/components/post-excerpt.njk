@@ -1,0 +1,38 @@
+{% macro postExcerpt(post, headingLevel = 'h3', filterTags = false) %}
+  <article class="post-card" data-tags="{% if post.data.tags and post.data.tags | length > 0 %}{{ post.data.tags | join(',') }}{% endif %}">
+    <div class="post-header-container">
+      {% if headingLevel === 'h2' %}
+        <h2 class="post-title">
+      {% else %}
+        <h3 class="post-title">
+      {% endif %}
+          <a href="{{ post.url }}" class="post-title-link">{{ post.data.title }}</a>
+      {% if headingLevel === 'h2' %}
+        </h2>
+      {% else %}
+        </h3>
+      {% endif %}
+      {% if post.data.tags %}
+        <div class="post-tags">
+          {% for tag in post.data.tags %}
+            {% if filterTags %}
+              <a href="#" class="tag-link tag-filter" data-tag="{{ tag }}" style="background-color: {{ tagColors[tag] or '#64748b' }};">{{ tag }}</a>
+            {% else %}
+              <a href="/tags/{{ tag | slug }}/" class="tag-link" style="background-color: {{ tagColors[tag] or '#64748b' }};">{{ tag }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="post-date">{{ post.date.toLocaleDateString('sv-SE') }}</div>
+
+    {% if post.data.review_score %}
+      <p class="post-excerpt-score">Betyg: {{ post.data.review_score }}/10</p>
+    {% endif %}
+
+    <div class="post-content post-excerpt">
+      <p>{{ post | postExcerpt }}</p>
+      <a href="{{ post.url }}" class="read-more-link">Läs mer →</a>
+    </div>
+  </article>
+{% endmacro %}

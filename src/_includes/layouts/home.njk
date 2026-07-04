@@ -1,8 +1,8 @@
 ---
 layout: base.njk
+extraCss: []
 ---
-{% from "components/tmdb-card.njk" import tmdbCard %}
-{% from "components/book-card.njk" import bookCard %}
+{% from "components/post-excerpt.njk" import postExcerpt %}
 
 {% include "components/tag-selector.njk" %}
 
@@ -11,35 +11,7 @@ layout: base.njk
 
   <div class="posts-container">
     {% for post in collections.posts %}
-    <article class="post-card" data-tags="{% if post.data.tags and post.data.tags | length > 0 %}{{ post.data.tags | join(',') }}{% endif %}">
-      <div class="post-header-container">
-        <h3 class="post-title">
-          <a href="{{ post.url }}" class="post-title-link">{{ post.data.title }}</a>
-        </h3>
-        {% if post.data.tags %}
-          <div class="post-tags">
-            {% for tag in post.data.tags %}
-              <a href="#" class="tag-link tag-filter" data-tag="{{ tag }}" style="background-color: {{ tagColors[tag] or '#64748b' }};">{{ tag }}</a>
-            {% endfor %}
-          </div>
-        {% endif %}
-      </div>
-      <div class="post-date">{{ post.date.toLocaleDateString('sv-SE') }}</div>
-      
-      {% if post.data.tmdb_id and post.data.tmdb_type %}
-        {{ tmdbCard(post.data.tmdbData, post.data.review_score, 'h3') }}
-      {% elif post.data.hardcover_id %}
-        {{ bookCard(post.data.hardcoverData, post.data.review_score, 'h3') }}
-      {% endif %}
-      
-      <div class="post-content">
-        {% if post.templateContent %}
-          {{ post.templateContent | safe }}
-        {% else %}
-          <em>Inget innehåll i detta inlägg.</em>
-        {% endif %}
-      </div>
-    </article>
+      {{ postExcerpt(post, 'h3', true) }}
     {% endfor %}
   </div>
 </section>

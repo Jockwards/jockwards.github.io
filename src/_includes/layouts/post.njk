@@ -1,5 +1,7 @@
 ---
 layout: base.njk
+extraCss:
+  - tmdb.css
 ---
 {% from "components/tmdb-card.njk" import tmdbCard %}
 {% from "components/book-card.njk" import bookCard %}
@@ -10,7 +12,7 @@ layout: base.njk
     {% if tags %}
       <div class="post-tags">
         {% for tag in tags %}
-          <a href="/" class="tag-link tag-filter" data-tag="{{ tag }}" style="background-color: {{ tagColors[tag] or '#64748b' }};">{{ tag }}</a>
+          <a href="/tags/{{ tag | slug }}/" class="tag-link" style="background-color: {{ tagColors[tag] or '#64748b' }};">{{ tag }}</a>
         {% endfor %}
       </div>
     {% endif %}

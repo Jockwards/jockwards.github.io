@@ -2,37 +2,27 @@
 	"name": "jocke-pa-internet",
 	"version": "1.0.0",
 	"description": "En modern men lite nördig blogg om kod, teknik och slumpmässiga tankar",
-	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"build:css": "tailwindcss -i src/assets/css/tailwind.css -o src/assets/css/bundle.css",
 		"watch:css": "tailwindcss -i src/assets/css/tailwind.css -o src/assets/css/bundle.css --watch",
 		"build:11ty": "npx @11ty/eleventy",
 		"build": "npm run build:css && npm run build:11ty",
 		"start": "npx @11ty/eleventy --serve",
-		"dev": "npm run watch:css & npx @11ty/eleventy --serve --watch",
-		"lint": "npx @biomejs/biome check .",
-		"lint:fix": "npx @biomejs/biome check --write .",
-		"format": "npx @biomejs/biome format --write ."
+		"dev": "concurrently -k \"npm run watch:css\" \"npx @11ty/eleventy --serve --watch\""
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
 		"@11ty/eleventy": "^3.1.2",
-		"@biomejs/biome": "^2.2.2",
 		"@tailwindcss/cli": "^4.1.12",
-		"@tailwindcss/typography": "^0.5.16",
+		"concurrently": "^9.2.1",
 		"tailwindcss": "^4.1.12"
 	},
 	"dependencies": {
 		"@11ty/eleventy-img": "^6.0.4",
 		"dotenv": "^17.2.3",
-		"eleventy-plugin-embed-everything": "^1.21.0",
-		"eleventy-plugin-youtube-embed": "^1.13.0",
-		"n": "^10.1.0",
-		"node-fetch": "^2.7.0",
-		"stable": "^0.1.8"
+		"eleventy-plugin-embed-everything": "^1.21.0"
 	},
 	"type": "module"
 }

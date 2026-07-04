@@ -2,6 +2,8 @@
 layout: base.njk
 title: Blogg
 description: Alla blogginlägg
+extraCss:
+  - blog.css
 ---
 
 {% include "components/tag-selector.njk" %}
@@ -16,10 +18,7 @@ description: Alla blogginlägg
         <div class="blog-main">
           <div class="blog-date">{{ post.date.toLocaleDateString('sv-SE', { year: 'numeric', month: 'short', day: 'numeric' }) }}</div>
           <div class="blog-title-and-score">
-            <h3 class="blog-title">{{ post.data.title }} {% if post.data.review_score %} ({{ post.data.review_score }}/10) {% endif %}</h3>
-
-
-
+            <h3 class="blog-title">{{ post.data.title }}{% if post.data.review_score %} ({{ post.data.review_score }}/10){% endif %}</h3>
           </div>
         </div>
 

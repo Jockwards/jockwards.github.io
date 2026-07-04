@@ -10,11 +10,6 @@ _site/
 # Generated CSS
 src/assets/css/bundle.css
 
-
-
-# Package lock file (optional - some prefer to track this)
-package-lock.json
-
 # Environment variables
 .env
 .env.local

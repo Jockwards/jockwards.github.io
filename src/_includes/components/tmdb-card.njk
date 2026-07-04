@@ -1,4 +1,6 @@
-{% macro tmdbCard(tmdbData, reviewScore, headingLevel = 'h2') %}
+{% from "components/review-score.njk" import reviewScore %}
+
+{% macro tmdbCard(tmdbData, reviewScoreValue, headingLevel = 'h2') %}
   {% if tmdbData %}
     <details class="tmdb-card" open>
       <summary class="tmdb-card-header">
@@ -15,18 +17,20 @@
         {% else %}
           </h3>
         {% endif %}
-        {% if reviewScore %}
-          {% set scoreClass = 'score-bronze' if reviewScore <= 3.33 else ('score-silver' if reviewScore <= 6.66 else 'score-gold') %}
-          <div class="tmdb-review-score {{ scoreClass }}">
-            <span>⭐ {{ reviewScore }}</span>
-            <span class="tmdb-review-score-label">/10</span>
-          </div>
-        {% endif %}
+        {{ reviewScore(reviewScoreValue) }}
       </summary>
       <div class="tmdb-metadata">
         <div class="tmdb-poster">
           {% if tmdbData.poster_path %}
-            <img src="https://image.tmdb.org/t/p/w500{{ tmdbData.poster_path }}" alt="Poster för {{ tmdbData.title }}">
+            <img
+              src="https://image.tmdb.org/t/p/w500{{ tmdbData.poster_path }}"
+              alt="Poster för {{ tmdbData.title }}"
+              loading="lazy"
+              decoding="async"
+              width="500"
+              height="750"
+              eleventy:ignore
+            >
           {% endif %}
         </div>
         <div class="tmdb-details">
@@ -52,7 +56,7 @@
               <strong>Skådespelare:</strong>
               <ul>
                 {% for actor in tmdbData.cast %}
-                  <li>{{ actor.name }} <span style="opacity: 0.7;">som {{ actor.character }}</span></li>
+                  <li>{{ actor.name }} <span class="cast-role">som {{ actor.character }}</span></li>
                 {% endfor %}
               </ul>
             </div>

@@ -46,6 +46,10 @@
   --text-primary: #059669;
 }
 
+.cast-role {
+  opacity: 0.7;
+}
+
 .tmdb-card:not([open]) .tmdb-card-header::before {
   transform: rotate(-90deg);
 }

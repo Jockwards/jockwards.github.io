@@ -18,6 +18,7 @@ This directory contains cached API responses that are committed to git.
 ## When to update
 
 - When adding new TMDB/Hardcover content
+- When your reading list changes on Hardcover
 - Run `npm run build` locally to fetch fresh data
 - Commit the updated cache files
 
@@ -25,4 +26,4 @@ This directory contains cached API responses that are committed to git.
 
 - `tmdb-*.json` - TMDB API responses (movies/TV shows)
 - `hardcover-*.json` - Hardcover API responses (books)
-- `reading-list.json` - Reading list data
+- `reading-list.json` - Full reading list from Hardcover

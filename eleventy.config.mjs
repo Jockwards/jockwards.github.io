@@ -1,3 +1,4 @@
+import "dotenv/config";
 import embedEverything from "eleventy-plugin-embed-everything";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { createRequire } from "module";
@@ -7,7 +8,6 @@ const getTmdbData = require("./src/_data/tmdb.cjs");
 const getHardcoverData = require("./src/_data/hardcover.cjs");
 
 export default function (eleventyConfig) {
-  // Add computed data for TMDB and Hardcover
   eleventyConfig.addGlobalData("eleventyComputed", {
     tmdbData: async (data) => {
       if (data.tmdb_id && data.tmdb_type) {
@@ -16,15 +16,18 @@ export default function (eleventyConfig) {
       return null;
     },
     hardcoverData: async (data) => {
-      // Only process if hardcover_id exists and is a valid value
-      if (data.hardcover_id && typeof data.hardcover_id !== 'object') {
+      if (data.hardcover_id && typeof data.hardcover_id !== "object") {
         return await getHardcoverData(data.hardcover_id);
       }
       return null;
     },
+    canonicalUrl: (data) => {
+      if (!data.page?.url) return null;
+      const siteUrl = data.site?.url || "https://jockeinter.net";
+      return `${siteUrl}${data.page.url}`;
+    },
   });
 
-  // Copy `src/assets` to `_site/assets`
   eleventyConfig.addPassthroughCopy({
     "src/assets/favicon": "assets/favicon",
     "src/assets/media": "assets/media",
@@ -34,13 +37,10 @@ export default function (eleventyConfig) {
     "src/assets/css/blog.css": "assets/css/blog.css",
   });
 
-  // Ignore layout files from being processed as pages
   eleventyConfig.ignores.add("src/_includes/**");
 
   eleventyConfig.addCollection("posts", (collectionApi) =>
-    collectionApi.getFilteredByGlob("src/posts/*.md").sort((a, b) => {
-      return b.date - a.date; // Sort by date descending (newest first)
-    }),
+    collectionApi.getFilteredByGlob("src/posts/*.md").sort((a, b) => b.date - a.date),
   );
 
   eleventyConfig.addCollection("tagList", (collectionApi) => {
@@ -48,14 +48,52 @@ export default function (eleventyConfig) {
     collectionApi.getAll().forEach((item) => {
       if (item.data.tags) {
         item.data.tags
-          .filter((tag) => tag !== "posts") // Exclude the 'posts' tag
+          .filter((tag) => tag !== "posts")
           .forEach((tag) => tagSet.add(tag));
       }
     });
     return [...tagSet].sort();
   });
 
-  // Shortcode for current date and time in 24h format
+  eleventyConfig.addFilter("striptags", (content) => {
+    if (!content) return "";
+    return content.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+  });
+
+  eleventyConfig.addFilter("truncate", (content, length = 280) => {
+    if (!content || content.length <= length) return content;
+    return `${content.slice(0, length).trim()}…`;
+  });
+
+  eleventyConfig.addFilter("postExcerpt", (post, length = 280) => {
+    if (post.data.description) return post.data.description;
+    const text = post.templateContent?.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+    if (!text) return "";
+    if (text.length <= length) return text;
+    return `${text.slice(0, length).trim()}…`;
+  });
+
+  eleventyConfig.addFilter("reviewScoreClass", (score) => {
+    if (score <= 3.33) return "score-bronze";
+    if (score <= 6.66) return "score-silver";
+    return "score-gold";
+  });
+
+  eleventyConfig.addFilter("isoDate", (date) => {
+    if (!date) return null;
+    return new Date(date).toISOString().split("T")[0];
+  });
+
+  eleventyConfig.addFilter("rssDate", (date) => {
+    return new Date(date).toUTCString();
+  });
+
+  eleventyConfig.addFilter("absoluteUrl", (url, base) => {
+    if (!url) return "";
+    if (url.startsWith("http")) return url;
+    return `${base}${url}`;
+  });
+
   eleventyConfig.addShortcode("datetime", () =>
     new Date().toLocaleString("sv-SE", {
       year: "numeric",
@@ -68,7 +106,6 @@ export default function (eleventyConfig) {
     }),
   );
 
-  // embedplugin
   eleventyConfig.addPlugin(embedEverything, {
     youtube: {
       options: {
@@ -77,12 +114,11 @@ export default function (eleventyConfig) {
     },
   });
 
-  // Fixa till bilder
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp", "jpeg"],
     widths: ["auto"],
-    outputDir: "_site/img/", // Output directory for generated images
-    urlPath: "/img/", // Public URL path for images
+    outputDir: "_site/img/",
+    urlPath: "/img/",
     htmlOptions: {
       imgAttributes: {
         loading: "lazy",
@@ -91,6 +127,7 @@ export default function (eleventyConfig) {
       pictureAttributes: {},
     },
   });
+
   return {
     dir: {
       input: "src",
@@ -102,5 +139,7 @@ export default function (eleventyConfig) {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
+    pathPrefix: "/",
+    htmlBaseUrl: process.env.SITE_URL || "https://jockeinter.net",
   };
 }
