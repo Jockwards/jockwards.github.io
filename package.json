@@ -20,7 +20,7 @@
 		"tailwindcss": "^4.1.12"
 	},
 	"dependencies": {
-		"@11ty/eleventy-img": "^6.0.4",
+		"@11ty/eleventy-img": "^7.0.0",
 		"dotenv": "^17.2.3",
 		"eleventy-plugin-embed-everything": "^1.21.0"
 	},
