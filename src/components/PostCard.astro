@@ -1,0 +1,71 @@
+---
+import { LOCALE_META, ui } from "../lib/i18n";
+import { postLocale, postPath, type Post } from "../lib/posts";
+import TagPill from "./TagPill.astro";
+
+interface Props {
+  post: Post;
+  headingLevel?: "h2" | "h3";
+}
+
+const { post, headingLevel = "h3" } = Astro.props;
+const locale = postLocale(post);
+const meta = LOCALE_META[locale];
+const copy = ui[locale];
+const excerptSource = post.data.description || post.data.title;
+const excerpt =
+  excerptSource.length > 280
+    ? `${excerptSource.slice(0, 280).trim()}…`
+    : excerptSource;
+const dateLabel = post.data.date.toLocaleDateString(meta.dateLocale);
+const dateTime = post.data.date.toISOString();
+---
+
+<article
+  class="post-card"
+  data-tags={post.data.tags.length ? post.data.tags.join(",") : undefined}
+>
+  <div class="post-header-container">
+    {
+      headingLevel === "h2" ? (
+        <h2 class="post-title">
+          <a href={postPath(post)} class="post-title-link">
+            {post.data.title}
+          </a>
+        </h2>
+      ) : (
+        <h3 class="post-title">
+          <a href={postPath(post)} class="post-title-link">
+            {post.data.title}
+          </a>
+        </h3>
+      )
+    }
+    {
+      post.data.tags.length > 0 && (
+        <div class="post-tags">
+          {post.data.tags.map((tag) => (
+            <TagPill tag={tag} lang={locale} />
+          ))}
+        </div>
+      )
+    }
+  </div>
+
+  <div class="post-date">
+    <time datetime={dateTime}>{dateLabel}</time>
+  </div>
+
+  {
+    post.data.review_score !== undefined && (
+      <p class="post-excerpt-score">
+        {copy.excerptScorePrefix}: {post.data.review_score}/10
+      </p>
+    )
+  }
+
+  <div class="post-content post-excerpt">
+    <p>{excerpt}</p>
+    <a href={postPath(post)} class="read-more-link">{copy.readMore}</a>
+  </div>
+</article>

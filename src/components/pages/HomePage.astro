@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../PostCard.astro";
+import TagFilter from "../TagFilter.astro";
+import { allAlternates, ui, type Locale } from "../../lib/i18n";
+import { getPosts, getTags } from "../../lib/posts";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "sv" } = Astro.props;
+const copy = ui[lang];
+const posts = await getPosts(lang);
+const tags = await getTags(lang);
+---
+
+<BaseLayout
+  title={copy.nav.home}
+  description={copy.homeDescription}
+  lang={lang}
+  alternates={allAlternates("/")}
+>
+  <section aria-labelledby="latest-heading">
+    <h1 id="latest-heading" class="section-header">{copy.latestPosts}</h1>
+    <TagFilter tags={tags} lang={lang} />
+    <div class="posts-container">
+      {
+        posts.length > 0 ? (
+          posts.map((post) => <PostCard post={post} headingLevel="h2" />)
+        ) : (
+          <p>{copy.noPosts}</p>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

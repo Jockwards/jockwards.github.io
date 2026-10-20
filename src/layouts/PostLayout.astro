@@ -1,0 +1,108 @@
+---
+import { render } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import BookCard from "../components/BookCard.astro";
+import TagPill from "../components/TagPill.astro";
+import TmdbCard from "../components/TmdbCard.astro";
+import type { HardcoverData } from "../lib/hardcover";
+import {
+  LOCALE_META,
+  localePath,
+  ui,
+  type Locale,
+} from "../lib/i18n";
+import { postLocale, postPath, type Post } from "../lib/posts";
+import { site } from "../lib/site";
+import type { TmdbData } from "../lib/tmdb";
+
+interface Props {
+  post: Post;
+  tmdbData?: TmdbData | null;
+  hardcoverData?: HardcoverData | null;
+  alternates?: Partial<Record<Locale, string>>;
+}
+
+const { post, tmdbData, hardcoverData, alternates = {} } = Astro.props;
+const { Content } = await render(post);
+const locale = postLocale(post);
+const meta = LOCALE_META[locale];
+const copy = ui[locale];
+const dateLabel = post.data.date.toLocaleDateString(meta.dateLocale);
+const dateTime = post.data.date.toISOString();
+const description = post.data.description || meta.siteDescription;
+const originalPath = post.data.translationOf
+  ? `/posts/${post.data.translationOf}/`
+  : null;
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={description}
+  canonical={new URL(postPath(post), Astro.site ?? site.url).toString()}
+  ogType="article"
+  lang={locale}
+  alternates={alternates}
+>
+  <article class="post-card">
+    <div class="post-header-container">
+      <h1 class="post-title">{post.data.title}</h1>
+      {
+        post.data.tags.length > 0 && (
+          <div class="post-tags">
+            {post.data.tags.map((tag) => (
+              <TagPill tag={tag} lang={locale} />
+            ))}
+          </div>
+        )
+      }
+    </div>
+    <div class="post-date">
+      <time datetime={dateTime}>{dateLabel}</time>
+    </div>
+
+    {
+      post.data.aiTranslated && (
+        <aside class="translation-notice" role="note">
+          <p>
+            {copy.translationNotice}
+            {originalPath && (
+              <>
+                {" "}
+                <a href={originalPath}>{copy.readOriginal}</a>.
+              </>
+            )}
+          </p>
+        </aside>
+      )
+    }
+
+    {
+      tmdbData && (
+        <TmdbCard
+          data={tmdbData}
+          score={post.data.review_score}
+          lang={locale}
+        />
+      )
+    }
+    {
+      !tmdbData && hardcoverData && (
+        <BookCard
+          data={hardcoverData}
+          score={post.data.review_score}
+          lang={locale}
+        />
+      )
+    }
+
+    <div class="post-content">
+      <Content />
+    </div>
+  </article>
+
+  <nav class="post-navigation" aria-label={copy.backAria}>
+    <a href={localePath(locale, "/")} class="terminal-link">
+      <span class="terminal-prompt">$</span> cd ~
+    </a>
+  </nav>
+</BaseLayout>

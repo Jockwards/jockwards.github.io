@@ -1,0 +1,80 @@
+---
+import type { HardcoverData } from "../lib/hardcover";
+import { ui, type Locale } from "../lib/i18n";
+import ReviewScore from "./ReviewScore.astro";
+
+interface Props {
+  data: HardcoverData;
+  score?: number;
+  lang?: Locale;
+}
+
+const { data, score, lang = "sv" } = Astro.props;
+const copy = ui[lang];
+---
+
+<details class="tmdb-card" open>
+  <summary class="tmdb-card-header">
+    <h2 class="tmdb-card-title">{data.title}</h2>
+    <ReviewScore score={score} lang={lang} />
+  </summary>
+
+  <div class="tmdb-metadata">
+    <div class="tmdb-poster">
+      {
+        data.cover_url && (
+          <img
+            src={data.cover_url}
+            alt={copy.coverAlt(data.title)}
+            loading="lazy"
+            decoding="async"
+            width="500"
+            height="750"
+          />
+        )
+      }
+    </div>
+
+    <div class="tmdb-details">
+      <a
+        class="tmdb-external-link"
+        href={`https://hardcover.app/books/${data.slug}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {copy.viewOnHardcover}
+      </a>
+      <div class="tmdb-info-grid">
+        {
+          data.release_date && (
+            <div class="tmdb-info-item">
+              <strong>{copy.releaseDate}:</strong>
+              <span>{data.release_date}</span>
+            </div>
+          )
+        }
+        {
+          data.pages && (
+            <div class="tmdb-info-item">
+              <strong>{copy.pages}:</strong>
+              <span>{data.pages}</span>
+            </div>
+          )
+        }
+      </div>
+
+      {
+        data.authors.length > 0 && (
+          <div class="tmdb-info-item">
+            <strong>{copy.authors}:</strong>
+            <ul>
+              {data.authors.map((author) => (
+                <li>{author}</li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</details>

@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BookGridItem from "../BookGridItem.astro";
+import BookListItem from "../BookListItem.astro";
+import { allAlternates, LOCALE_META, ui, type Locale } from "../../lib/i18n";
+import { getReadingList } from "../../lib/reading-list";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "sv" } = Astro.props;
+const copy = ui[lang];
+const readingList = await getReadingList();
+const authors = Object.entries(readingList.readGrouped).sort(([a], [b]) =>
+  a.localeCompare(b, LOCALE_META[lang].dateLocale),
+);
+---
+
+<BaseLayout
+  title={copy.readingList}
+  description={copy.readingListDescription}
+  lang={lang}
+  alternates={allAlternates("/pages/reading-list/")}
+>
+  <section aria-labelledby="reading-heading">
+    <h1 id="reading-heading" class="section-header">{copy.readingList}</h1>
+
+    {
+      readingList.currentlyReading.length > 0 && (
+        <div class="reading-section">
+          <h2 class="reading-section-title">{copy.currentlyReading}</h2>
+          <div class="books-grid">
+            {readingList.currentlyReading.map((book) => (
+              <BookGridItem book={book} lang={lang} />
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    {
+      readingList.wantToRead.length > 0 && (
+        <div class="reading-section">
+          <h2 class="reading-section-title">{copy.wantToRead}</h2>
+          <div class="books-grid">
+            {readingList.wantToRead.map((book) => (
+              <BookGridItem book={book} lang={lang} />
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    {
+      readingList.read.length > 0 && (
+        <div class="reading-section">
+          <h2 class="reading-section-title">{copy.read}</h2>
+          <div class="books-list">
+            {authors.map(([author, authorData]) => (
+              <div class="author-group">
+                <h3 class="author-name">{author}</h3>
+
+                {Object.entries(authorData.series).map(
+                  ([seriesName, seriesBooks]) => (
+                    <div class="series-group">
+                      <h4 class="series-name">{seriesName}</h4>
+                      <ul class="book-list">
+                        {seriesBooks.map((book) => (
+                          <BookListItem
+                            book={book}
+                            showPosition
+                            lang={lang}
+                          />
+                        ))}
+                      </ul>
+                    </div>
+                  ),
+                )}
+
+                {authorData.standalone.length > 0 && (
+                  <ul class="book-list">
+                    {authorData.standalone.map((book) => (
+                      <BookListItem book={book} lang={lang} />
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    {
+      readingList.didNotFinish.length > 0 && (
+        <div class="reading-section">
+          <h2 class="reading-section-title">{copy.didNotFinish}</h2>
+          <div class="books-grid">
+            {readingList.didNotFinish.map((book) => (
+              <BookGridItem book={book} lang={lang} />
+            ))}
+          </div>
+        </div>
+      )
+    }
+  </section>
+</BaseLayout>

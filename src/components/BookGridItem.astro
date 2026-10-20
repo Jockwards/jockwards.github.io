@@ -1,0 +1,45 @@
+---
+import { ui, type Locale } from "../lib/i18n";
+import type { Book } from "../lib/reading-list";
+
+interface Props {
+  book: Book;
+  lang?: Locale;
+}
+
+const { book, lang = "sv" } = Astro.props;
+const copy = ui[lang];
+---
+
+<div class="book-item">
+  <a
+    href={`https://hardcover.app/books/${book.slug}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="book-link"
+  >
+    {
+      book.cover ? (
+        <img
+          src={book.cover}
+          alt={copy.coverAlt(book.title)}
+          class="book-cover"
+          loading="lazy"
+          decoding="async"
+          width="120"
+          height="180"
+        />
+      ) : (
+        <div class="book-cover-placeholder">{book.title}</div>
+      )
+    }
+    <div class="book-info">
+      <div class="book-title">{book.title}</div>
+      {
+        book.authors.length > 0 && (
+          <div class="book-author">{book.authors.join(", ")}</div>
+        )
+      }
+    </div>
+  </a>
+</div>

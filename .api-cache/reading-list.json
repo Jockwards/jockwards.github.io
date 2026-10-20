@@ -1,15 +1,38 @@
 {
   "wantToRead": [
     {
-      "id": 475686,
-      "slug": "dragon-mage-dcfe858c-401b-449f-9169-165c1f60335f",
-      "title": "Dragon Mage",
-      "cover": "https://assets.hardcover.app/edition/30397023/54451883._SX98_.jpg",
+      "id": 1795134,
+      "slug": "shallow-pit-garden-composting",
+      "title": "Shallow-Pit Garden Composting: The Easy, No-Smell, No-Turning Way to Create Organic Compost For Your Garden",
+      "cover": "https://assets.hardcover.app/edition/31911582/c4b380b5d8eae3971aa33a056a2e737268e72997.jpeg",
       "authors": [
-        "M.L. Spencer"
+        "Caleb Warnock"
+      ],
+      "series": null,
+      "seriesPosition": null
+    },
+    {
+      "id": 445565,
+      "slug": "dragon-mage-2020",
+      "title": "Dragon Mage",
+      "cover": "https://assets.hardcover.app/external_data/4089403/dbc42098cd89aa5489b5e2af44d6b58777f91dca.jpeg",
+      "authors": [
+        "M.L. Spencer",
+        "Ben Farrow"
       ],
       "series": "Rivenworld",
-      "seriesPosition": 1
+      "seriesPosition": "1"
+    },
+    {
+      "id": 445851,
+      "slug": "age-of-swords",
+      "title": "Age of Swords",
+      "cover": "https://assets.hardcover.app/edition/18167019/f82806005e84aa4cb4f9642a41bdabdf2287425f.jpeg",
+      "authors": [
+        "Michael J. Sullivan"
+      ],
+      "series": "The Legends of the First Empire",
+      "seriesPosition": "2"
     },
     {
       "id": 856793,
@@ -20,7 +43,7 @@
         "Benedict Jacka"
       ],
       "series": "Inheritance of Magic",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 496539,
@@ -32,7 +55,7 @@
         "Jay Kristoff"
       ],
       "series": "The Aurora Cycle",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 441044,
@@ -43,7 +66,7 @@
         "Naomi Novik"
       ],
       "series": "The Scholomance",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 469524,
@@ -60,23 +83,12 @@
       "id": 427621,
       "slug": "leviathan-wakes",
       "title": "Leviathan Wakes",
-      "cover": "https://assets.hardcover.app/editions/31795264/8326503637087890.jpg",
+      "cover": "https://assets.hardcover.app/edition/31795264/4dc26d27-e3dd-44fa-acce-05971e038e9d.jpg",
       "authors": [
         "James S. A. Corey"
       ],
       "series": "The Expanse",
-      "seriesPosition": 1
-    },
-    {
-      "id": 1722528,
-      "slug": "age-of-swords-the-legends-of-the-first-empire-2-arc",
-      "title": "Age of Swords (The Legends of the First Empire, #2) - ARC",
-      "cover": "https://assets.hardcover.app/external_data/61412615/5075bdfdf4ce86429513453500740fe6942d49f5.jpeg",
-      "authors": [
-        "Michael J. Sullivan"
-      ],
-      "series": "The Legends of the First Empire",
-      "seriesPosition": 2
+      "seriesPosition": "1"
     },
     {
       "id": 445850,
@@ -87,7 +99,7 @@
         "Michael J. Sullivan"
       ],
       "series": "The Legends of the First Empire",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 447024,
@@ -98,7 +110,7 @@
         "Jonathan Renshaw"
       ],
       "series": "The Wakening",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 427863,
@@ -109,19 +121,18 @@
         "Brandon Sanderson"
       ],
       "series": "The Mistborn Saga",
-      "seriesPosition": 7
+      "seriesPosition": "7"
     },
     {
       "id": 312460,
       "slug": "dune",
       "title": "Dune",
-      "cover": "https://assets.hardcover.app/editions/30426415/8362709973192601-9780441013593-us.jpg",
+      "cover": "https://assets.hardcover.app/edition/6216483/16b2e7f2-d173-46d4-932c-8c5158ea5eff.jpg",
       "authors": [
-        "Frank Herbert",
-        "Brian Herbert"
+        "Frank Herbert"
       ],
       "series": "Dune",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 77104,
@@ -132,7 +143,7 @@
         "Robert Jordan"
       ],
       "series": "The Wheel of Time",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 202496,
@@ -158,14 +169,14 @@
     },
     {
       "id": 498604,
-      "slug": "the-golem-and-the-djinni",
-      "title": "The Golem and the Djinni",
-      "cover": "https://assets.hardcover.app/editions/30447801/8e9cdf10-c45f-4b5d-a4ea-3242ee65b1ac.jpg",
+      "slug": "the-golem-and-the-jinni",
+      "title": "The Golem and the Jinni",
+      "cover": "https://assets.hardcover.app/edition/31510651/6c837d63-b91e-46e7-9fd9-b89e038944c5.jpeg",
       "authors": [
         "Helene Wecker"
       ],
-      "series": "The Golem and the Djinni",
-      "seriesPosition": 1
+      "series": "The Golem and the Jinni",
+      "seriesPosition": "1"
     },
     {
       "id": 95034,
@@ -176,7 +187,7 @@
         "Ann Leckie"
       ],
       "series": "Imperial Radch (publication order)",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 430581,
@@ -187,15 +198,17 @@
         "Scarlett  St. Clair"
       ],
       "series": "Adrian X Isolde",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 439334,
       "slug": "the-tea-master-and-the-detective",
       "title": "The Tea Master and the Detective",
-      "cover": "https://assets.hardcover.app/edition/4448375/9158525-L.jpg",
-      "authors": [],
-      "series": null,
+      "cover": "https://assets.hardcover.app/external_data/26701787/ee2599b24e9d0feded81cbc3db183006b361b041.jpeg",
+      "authors": [
+        "Aliette de Bodard"
+      ],
+      "series": "Universe of Xuya",
       "seriesPosition": null
     },
     {
@@ -207,7 +220,7 @@
         "Richard Kadrey"
       ],
       "series": "Sandman Slim",
-      "seriesPosition": 12
+      "seriesPosition": "12"
     },
     {
       "id": 427473,
@@ -218,7 +231,7 @@
         "Pierce Brown"
       ],
       "series": "Red Rising Saga",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 434434,
@@ -229,7 +242,7 @@
         "James S. A. Corey"
       ],
       "series": "The Expanse",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 427923,
@@ -240,18 +253,18 @@
         "Brandon Sanderson"
       ],
       "series": "Skyward",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 459821,
       "slug": "the-golden-enclaves",
       "title": "The Golden Enclaves",
-      "cover": "https://assets.hardcover.app/edition/30391820/3c95452c9fb481321be195ed313e5ecd0c3599cf.jpeg",
+      "cover": "https://assets.hardcover.app/edition/30391820/content.jpeg",
       "authors": [
         "Naomi Novik"
       ],
       "series": "The Scholomance",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 427666,
@@ -262,7 +275,7 @@
         "Fonda Lee"
       ],
       "series": "The Green Bone Saga",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 485171,
@@ -272,7 +285,7 @@
       "authors": [
         "Timothy Zahn"
       ],
-      "series": "Star Wars Canon",
+      "series": "Star Wars Disney Canon Novel",
       "seriesPosition": null
     },
     {
@@ -283,7 +296,7 @@
       "authors": [
         "Timothy Zahn"
       ],
-      "series": "Star Wars Canon",
+      "series": "Star Wars Disney Canon Novel",
       "seriesPosition": null
     },
     {
@@ -292,11 +305,11 @@
       "title": "A Master of Djinn",
       "cover": "https://assets.hardcover.app/editions/30405763/5335274566339030.jpg",
       "authors": [
-        "P. Djèlí Clark",
-        "Mathilde Montier"
+        "Mathilde Montier",
+        "P. Djèlí Clark"
       ],
       "series": "Dead Djinn Universe",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 445545,
@@ -307,18 +320,19 @@
         "Kat Howard"
       ],
       "series": "The Unseen World",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 446511,
       "slug": "starsight",
       "title": "Starsight",
-      "cover": "https://assets.hardcover.app/editions/31386302/2015435559880658.jpg",
+      "cover": "https://assets.hardcover.app/edition/22549278/5352e195-8ec7-4791-87c4-3fb45038812f.jpg",
       "authors": [
-        "Brandon Sanderson"
+        "Brandon Sanderson",
+        "Lee Garbett"
       ],
       "series": "Skyward",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 485196,
@@ -329,7 +343,7 @@
         "Alexander Freed",
         "Saskia Maarleveld"
       ],
-      "series": "Star Wars Canon",
+      "series": "Star Wars Disney Canon Novel",
       "seriesPosition": null
     },
     {
@@ -341,7 +355,7 @@
         "Yoon Ha Lee"
       ],
       "series": "The Machineries of Empire",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 448515,
@@ -352,7 +366,7 @@
         "Robin Hobb"
       ],
       "series": "Fitz and the Fool",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 92854,
@@ -374,18 +388,18 @@
         "James Islington"
       ],
       "series": "The Licanius Trilogy",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 458644,
       "slug": "fools-quest",
       "title": "Fool's Quest",
-      "cover": "https://assets.hardcover.app/edition/30559800/4250c9c12c7d23043b572dae3bc666211d7bbbc3.jpeg",
+      "cover": "https://assets.hardcover.app/external_data/4052652/133ecbfb15713011b9a92b8fb4d3dfa00f160da5.jpeg",
       "authors": [
         "Robin Hobb"
       ],
       "series": "Fitz and the Fool",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 65446,
@@ -396,7 +410,7 @@
         "Ilona Andrews"
       ],
       "series": "Kate Daniels",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 56778,
@@ -407,7 +421,7 @@
         "Scott Lynch"
       ],
       "series": "Gentleman Bastard",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 430976,
@@ -418,7 +432,7 @@
         "James S. A. Corey"
       ],
       "series": "The Expanse",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 469885,
@@ -430,7 +444,7 @@
         "Jay Kristoff"
       ],
       "series": "The Aurora Cycle",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 468291,
@@ -441,20 +455,31 @@
         "Robin Hobb"
       ],
       "series": "Fitz and the Fool",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     }
   ],
   "currentlyReading": [
     {
-      "id": 674917,
-      "slug": "two-twisted-crowns",
-      "title": "Two Twisted Crowns",
-      "cover": "https://assets.hardcover.app/external_data/61236890/72f0738a5c403dcc92bce62a3c2ee10dd9aa199e.jpeg",
+      "id": 2470342,
+      "slug": "time-god-warlock",
+      "title": "Time God Warlock",
+      "cover": "https://assets.hardcover.app/edition/32756739/74b90709-d0f9-46d7-9d08-003a60c69121.jpg",
       "authors": [
-        "Rachel Gillig"
+        "Shami Stovall"
       ],
-      "series": "The Shepherd King",
-      "seriesPosition": 2
+      "series": "The Chronos Chronicles",
+      "seriesPosition": "4"
+    },
+    {
+      "id": 2721160,
+      "slug": "witching-hour-81914946-0d9f-43e7-914c-6be7ffacaf2b",
+      "title": "Witching Hour",
+      "cover": null,
+      "authors": [
+        "H.P. Mallory"
+      ],
+      "series": "Witch & Warlock",
+      "seriesPosition": "10"
     },
     {
       "id": 1989398,
@@ -465,7 +490,7 @@
         "Martha Wells"
       ],
       "series": "The Murderbot Diaries",
-      "seriesPosition": 8
+      "seriesPosition": "8"
     },
     {
       "id": 665261,
@@ -476,7 +501,7 @@
         "Brandon Sanderson"
       ],
       "series": "The Stormlight Archive",
-      "seriesPosition": 5
+      "seriesPosition": "5"
     },
     {
       "id": 380764,
@@ -487,7 +512,7 @@
         "Scott Lynch"
       ],
       "series": "Gentleman Bastard",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 101048,
@@ -498,7 +523,7 @@
         "Jay Kristoff"
       ],
       "series": "The Nevernight Chronicle",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 475446,
@@ -509,10 +534,21 @@
         "John Gwynne"
       ],
       "series": "The Faithful and the Fallen",
-      "seriesPosition": 4
+      "seriesPosition": "4"
     }
   ],
   "read": [
+    {
+      "id": 674917,
+      "slug": "two-twisted-crowns",
+      "title": "Two Twisted Crowns",
+      "cover": "https://assets.hardcover.app/external_data/61236890/72f0738a5c403dcc92bce62a3c2ee10dd9aa199e.jpeg",
+      "authors": [
+        "Rachel Gillig"
+      ],
+      "series": "The Shepherd King",
+      "seriesPosition": "2"
+    },
     {
       "id": 514157,
       "slug": "one-dark-window",
@@ -522,7 +558,7 @@
         "Rachel Gillig"
       ],
       "series": "The Shepherd King",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 333169,
@@ -533,7 +569,7 @@
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 13
+      "seriesPosition": "13"
     },
     {
       "id": 482466,
@@ -544,7 +580,7 @@
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 18
+      "seriesPosition": "18"
     },
     {
       "id": 1675881,
@@ -555,18 +591,18 @@
         "Jen Williams"
       ],
       "series": "Talon Duology",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 970687,
       "slug": "talonsister",
       "title": "Talonsister",
-      "cover": "https://assets.hardcover.app/external_data/60126680/969b576b0c1733f9a7e814ae28b40521ad228dc3.jpeg",
+      "cover": "https://assets.hardcover.app/edition/30995639/fc3d65b2c3e7aa049fe093552618cb7834f22d5a.jpeg",
       "authors": [
         "Jen Williams"
       ],
       "series": "Talon Duology",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 427522,
@@ -577,7 +613,7 @@
         "Brandon Sanderson"
       ],
       "series": "The Stormlight Archive",
-      "seriesPosition": 4
+      "seriesPosition": "4"
     },
     {
       "id": 429258,
@@ -588,7 +624,7 @@
         "Veronica Roth"
       ],
       "series": "Divergent",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 20970,
@@ -599,7 +635,7 @@
         "Veronica Roth"
       ],
       "series": "Divergent",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 462038,
@@ -610,7 +646,7 @@
         "Martha Wells"
       ],
       "series": "The Murderbot Diaries",
-      "seriesPosition": 7
+      "seriesPosition": "7"
     },
     {
       "id": 435167,
@@ -621,7 +657,7 @@
         "Martha Wells"
       ],
       "series": "The Murderbot Diaries",
-      "seriesPosition": 6
+      "seriesPosition": "6"
     },
     {
       "id": 440171,
@@ -632,7 +668,7 @@
         "Martha Wells"
       ],
       "series": "The Murderbot Diaries",
-      "seriesPosition": 5
+      "seriesPosition": "5"
     },
     {
       "id": 432448,
@@ -643,7 +679,7 @@
         "Martha Wells"
       ],
       "series": "The Murderbot Diaries",
-      "seriesPosition": 4
+      "seriesPosition": "4"
     },
     {
       "id": 427560,
@@ -654,7 +690,7 @@
         "Martha Wells"
       ],
       "series": "The Murderbot Diaries",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 427537,
@@ -665,7 +701,7 @@
         "Martha Wells"
       ],
       "series": "The Murderbot Diaries",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 476282,
@@ -676,7 +712,7 @@
         "Benedict Jacka"
       ],
       "series": "Alex Verus",
-      "seriesPosition": 12
+      "seriesPosition": "12"
     },
     {
       "id": 342378,
@@ -687,18 +723,18 @@
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 17
+      "seriesPosition": "17"
     },
     {
       "id": 462513,
       "slug": "nona-the-ninth",
       "title": "Nona the Ninth",
-      "cover": "https://assets.hardcover.app/edition/30413195/d33585d4c8b7aeb0ba3e5ea4eca577a9961fd77b.jpeg",
+      "cover": "https://assets.hardcover.app/external_data/4226532/1fe0718f02567aec6d95051ccddf1333fdf6196e.jpeg",
       "authors": [
         "Tamsyn Muir"
       ],
       "series": "The Locked Tomb",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 469048,
@@ -710,7 +746,7 @@
         "Bronson Pinchot"
       ],
       "series": "Grimnoir Chronicles",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 447026,
@@ -718,10 +754,11 @@
       "title": "Battle Mage",
       "cover": "https://assets.hardcover.app/book/447026/ad97a2ba-23e9-485b-8578-bf023d4d2612.jpg",
       "authors": [
-        "Peter A. Flannery"
+        "Peter A. Flannery",
+        "R.D. Watson"
       ],
       "series": "The Souls Of Wrath",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 1832269,
@@ -733,7 +770,7 @@
         "Bronson Pinchot"
       ],
       "series": "Grimnoir Chronicles",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 379785,
@@ -743,7 +780,7 @@
       "authors": [
         "Timothy Zahn"
       ],
-      "series": "Star Wars Canon",
+      "series": "Star Wars Disney Canon Novel",
       "seriesPosition": null
     },
     {
@@ -755,30 +792,29 @@
         "Kevin Hearne"
       ],
       "series": "The Iron Druid Chronicles",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 213831,
       "slug": "small-favor",
       "title": "Small Favor",
-      "cover": "https://assets.hardcover.app/edition/30422731/507bdab33027b79e3609c563d00388d6c35b2558.jpeg",
+      "cover": "https://assets.hardcover.app/editions/30446742/838735219618985.jpg",
       "authors": [
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 10
+      "seriesPosition": "10"
     },
     {
       "id": 1244,
       "slug": "death-masks",
       "title": "Death Masks",
-      "cover": "https://assets.hardcover.app/external_data/59738371/8e1ad815a9ca924e206d06c6b808c7616cc4fe3c.jpeg",
+      "cover": "https://assets.hardcover.app/editions/31450083/9232522244511468.jpg",
       "authors": [
-        "Jim Butcher",
-        "James Marsters"
+        "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 5
+      "seriesPosition": "5"
     },
     {
       "id": 176230,
@@ -790,7 +826,7 @@
         "Bronson Pinchot"
       ],
       "series": "Grimnoir Chronicles",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 427971,
@@ -801,7 +837,7 @@
         "Martha Wells"
       ],
       "series": "The Murderbot Diaries",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 461327,
@@ -812,7 +848,7 @@
         "Richard Kadrey"
       ],
       "series": "Sandman Slim",
-      "seriesPosition": 9
+      "seriesPosition": "9"
     },
     {
       "id": 427480,
@@ -823,7 +859,7 @@
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 6
+      "seriesPosition": "6"
     },
     {
       "id": 429262,
@@ -834,7 +870,7 @@
         "Kevin Hearne"
       ],
       "series": "The Iron Druid Chronicles",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 428349,
@@ -845,7 +881,7 @@
         "Kevin Hearne"
       ],
       "series": "The Iron Druid Chronicles",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 183010,
@@ -856,7 +892,7 @@
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 341498,
@@ -867,7 +903,7 @@
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 4
+      "seriesPosition": "4"
     },
     {
       "id": 309362,
@@ -878,19 +914,19 @@
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 117922,
       "slug": "white-night",
       "title": "White Night",
-      "cover": "https://assets.hardcover.app/external_data/26679145/0910f7baaee7f2f7245e3bd25ba3a221c2a1fd95.jpeg",
+      "cover": "https://assets.hardcover.app/external_data/3685911/0910f7baaee7f2f7245e3bd25ba3a221c2a1fd95.jpeg",
       "authors": [
-        "Jim Butcher",
-        "Chris McGrath"
+        "Chris McGrath",
+        "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 9
+      "seriesPosition": "9"
     },
     {
       "id": 98856,
@@ -901,7 +937,7 @@
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 8
+      "seriesPosition": "8"
     },
     {
       "id": 793508,
@@ -909,11 +945,11 @@
       "title": "Harry Potter: The Complete Collection",
       "cover": "https://assets.hardcover.app/external_data/29333921/ed5f38e835d29945b85df089ede6e988b67215b7.jpeg",
       "authors": [
-        "J.K. Rowling",
-        "Olly Moss"
+        "Olly Moss",
+        "J.K. Rowling"
       ],
       "series": "Harry Potter",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 508476,
@@ -925,7 +961,7 @@
         "Reg Keeland"
       ],
       "series": "Millennium",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 386446,
@@ -936,7 +972,7 @@
         "Brandon Sanderson"
       ],
       "series": "The Stormlight Archive",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 104450,
@@ -947,7 +983,7 @@
         "Robin Hobb"
       ],
       "series": "The Tawny Man",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 5959,
@@ -958,29 +994,29 @@
         "Richard Kadrey"
       ],
       "series": "Sandman Slim",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 65020,
       "slug": "the-farseer-trilogy",
       "title": "The Farseer Trilogy",
-      "cover": "https://assets.hardcover.app/edition/642151/68e97103870cf5e81b4e2cd855e83ae742992c76.jpeg",
+      "cover": "https://assets.hardcover.app/external_data/4056453/95fea2bbebc7262a63006066102137067a314851.jpeg",
       "authors": [
         "Robin Hobb"
       ],
       "series": "The Farseer Trilogy",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 427383,
       "slug": "the-well-of-ascension",
       "title": "The Well of Ascension",
-      "cover": "https://assets.hardcover.app/book_mappings/7332358/43f95ab5370016fe0b2eddf9adee5f338850e6c4.jpeg",
+      "cover": "https://assets.hardcover.app/edition/11581188/a697a2121fce4b8f163f227e0cf3c2bd3fd02089.jpeg",
       "authors": [
         "Brandon Sanderson"
       ],
       "series": "The Mistborn Saga",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 440072,
@@ -991,7 +1027,7 @@
         "Michael J. Sullivan"
       ],
       "series": "The Riyria Chronicles",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 603897,
@@ -999,7 +1035,6 @@
       "title": "Ondskan",
       "cover": "https://assets.hardcover.app/edition/30574473/3818a9b64e6f73422a9f4857cfb4029012902f6e.jpeg",
       "authors": [
-        "Jan Guillou",
         "Jan Guillou"
       ],
       "series": null,
@@ -1015,18 +1050,19 @@
         "MacLeod Andrews"
       ],
       "series": "Sandman Slim",
-      "seriesPosition": 6
+      "seriesPosition": "6"
     },
     {
       "id": 430479,
       "slug": "killing-pretty",
-      "title": "Killing Pretty",
+      "title": "Killing Pretty: A Sandman Slim Novel",
       "cover": "https://assets.hardcover.app/external_data/59379407/add71c572dfdb6f8eefce54cb6216222093011f5.jpeg",
       "authors": [
-        "Richard Kadrey"
+        "Richard Kadrey",
+        "MacLeod Andrews"
       ],
       "series": "Sandman Slim",
-      "seriesPosition": 7
+      "seriesPosition": "7"
     },
     {
       "id": 103241,
@@ -1037,18 +1073,18 @@
         "Brandon Sanderson"
       ],
       "series": "The Mistborn Saga",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 369692,
       "slug": "mistborn",
       "title": "Mistborn: The Final Empire",
-      "cover": "https://assets.hardcover.app/external_data/31614753/800579f7d675e7d2cd01043ddc57eb6ff724a6a5.jpeg",
+      "cover": "https://assets.hardcover.app/edition/5195452/8c6af4492dd7ef9eed7c1e40abefc79f23df2d2f.jpeg",
       "authors": [
         "Brandon Sanderson"
       ],
       "series": "The Mistborn Saga",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 338931,
@@ -1059,7 +1095,7 @@
         "Brandon Sanderson"
       ],
       "series": "Elantris",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 54244,
@@ -1067,22 +1103,21 @@
       "title": "Royal Assassin",
       "cover": "https://assets.hardcover.app/editions/18512423/6859632616769302.jpg",
       "authors": [
-        "Robin Hobb",
-        "Stephen Youll"
+        "Robin Hobb"
       ],
       "series": "The Farseer Trilogy",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 427707,
-      "slug": "mistborn-trilogy-2001",
+      "slug": "mistborn-trilogy-2009",
       "title": "Mistborn Trilogy",
       "cover": "https://assets.hardcover.app/edition/66352/df7199fd1b57f9b55c718fa78ee3564ef73af0ae.jpeg",
       "authors": [
         "Brandon Sanderson"
       ],
       "series": "The Mistborn Saga",
-      "seriesPosition": null
+      "seriesPosition": "1"
     },
     {
       "id": 476080,
@@ -1093,7 +1128,7 @@
         "Benedict Jacka"
       ],
       "series": "Alex Verus",
-      "seriesPosition": 5
+      "seriesPosition": "5"
     },
     {
       "id": 458592,
@@ -1104,29 +1139,29 @@
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 15
+      "seriesPosition": "15"
     },
     {
       "id": 446523,
       "slug": "peace-talks",
       "title": "Peace Talks",
-      "cover": "https://assets.hardcover.app/external_data/59738498/edb1be8d1015aeab2f7c04229b5878ba576e9fd7.jpeg",
+      "cover": "https://assets.hardcover.app/editions/30654959/8813020130176361.jpg",
       "authors": [
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 16
+      "seriesPosition": "16"
     },
     {
       "id": 459452,
       "slug": "oathbringer",
       "title": "Oathbringer",
-      "cover": "https://assets.hardcover.app/external_data/42422093/ea15fb4de9d1cf70cd3606c1710e83fc8075826a.jpeg",
+      "cover": "https://assets.hardcover.app/edition/30455612/1deeb21c2576843fe4556815fea2eb784e406908.jpeg",
       "authors": [
         "Brandon Sanderson"
       ],
       "series": "The Stormlight Archive",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 252854,
@@ -1137,7 +1172,7 @@
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 12
+      "seriesPosition": "12"
     },
     {
       "id": 255544,
@@ -1148,7 +1183,7 @@
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 7
+      "seriesPosition": "7"
     },
     {
       "id": 150498,
@@ -1159,7 +1194,7 @@
         "Kevin Hearne"
       ],
       "series": "The Iron Druid Chronicles",
-      "seriesPosition": 8
+      "seriesPosition": "8"
     },
     {
       "id": 39657,
@@ -1170,7 +1205,7 @@
         "Brandon Sanderson"
       ],
       "series": "The Reckoners",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 476430,
@@ -1181,18 +1216,19 @@
         "Benedict Jacka"
       ],
       "series": "Alex Verus",
-      "seriesPosition": 4
+      "seriesPosition": "4"
     },
     {
       "id": 458362,
       "slug": "kill-city-blues",
-      "title": "Kill City Blues",
+      "title": "Kill City Blues: A Sandman Slim Novel",
       "cover": "https://assets.hardcover.app/edition/30610606/15783828._SX98_.jpg",
       "authors": [
-        "Richard Kadrey"
+        "Richard Kadrey",
+        "MacLeod Andrews"
       ],
       "series": "Sandman Slim",
-      "seriesPosition": 5
+      "seriesPosition": "5"
     },
     {
       "id": 427477,
@@ -1203,7 +1239,7 @@
         "Brandon Sanderson"
       ],
       "series": "The Reckoners",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 90461,
@@ -1211,11 +1247,11 @@
       "title": "Sandman Slim",
       "cover": "https://assets.hardcover.app/edition/30400324/175417a99177fcd5598741dc8c8f896430097718.jpeg",
       "authors": [
-        "Richard Kadrey",
-        "MacLeod Andrews"
+        "MacLeod Andrews",
+        "Richard Kadrey"
       ],
       "series": "Sandman Slim",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 454385,
@@ -1237,7 +1273,7 @@
         "Tamsyn Muir"
       ],
       "series": "The Locked Tomb",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 187503,
@@ -1248,7 +1284,7 @@
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 11
+      "seriesPosition": "11"
     },
     {
       "id": 458387,
@@ -1259,18 +1295,18 @@
         "Richard Kadrey"
       ],
       "series": "Sandman Slim",
-      "seriesPosition": 10
+      "seriesPosition": "10"
     },
     {
       "id": 427749,
       "slug": "skyward",
       "title": "Skyward",
-      "cover": "https://assets.hardcover.app/edition/30095628/5c92d3d2227ee5e279961695e463779a9e7508ed.jpeg",
+      "cover": "https://assets.hardcover.app/external_data/37373868/d0ade48e00d3ec6ba0c30f961f0f7f6fcbeab5a4.jpeg",
       "authors": [
         "Brandon Sanderson"
       ],
       "series": "Skyward",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 476354,
@@ -1281,7 +1317,7 @@
         "Benedict Jacka"
       ],
       "series": "Alex Verus",
-      "seriesPosition": 9
+      "seriesPosition": "9"
     },
     {
       "id": 430150,
@@ -1292,7 +1328,7 @@
         "Richard Kadrey"
       ],
       "series": "Sandman Slim",
-      "seriesPosition": 4
+      "seriesPosition": "4"
     },
     {
       "id": 429264,
@@ -1303,7 +1339,7 @@
         "Kevin Hearne"
       ],
       "series": "The Iron Druid Chronicles",
-      "seriesPosition": 4
+      "seriesPosition": "4"
     },
     {
       "id": 427458,
@@ -1314,7 +1350,7 @@
         "Brandon Sanderson"
       ],
       "series": "The Reckoners",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 385491,
@@ -1325,7 +1361,7 @@
         "Brandon Sanderson"
       ],
       "series": "Warbreaker",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 109344,
@@ -1336,7 +1372,7 @@
         "Veronica Roth"
       ],
       "series": "Divergent",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 445924,
@@ -1347,7 +1383,7 @@
         "Benedict Jacka"
       ],
       "series": "Alex Verus",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 445923,
@@ -1358,7 +1394,7 @@
         "Benedict Jacka"
       ],
       "series": "Alex Verus",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 203347,
@@ -1369,7 +1405,7 @@
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 149300,
@@ -1380,7 +1416,7 @@
         "Robin Hobb"
       ],
       "series": "The Farseer Trilogy",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 428688,
@@ -1392,7 +1428,7 @@
         "Jay Kristoff"
       ],
       "series": "The Aurora Cycle",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 485195,
@@ -1402,7 +1438,7 @@
       "authors": [
         "Timothy Zahn"
       ],
-      "series": "Star Wars Canon",
+      "series": "Star Wars Disney Canon Novel",
       "seriesPosition": null
     },
     {
@@ -1411,10 +1447,10 @@
       "title": "Thrawn: Treason",
       "cover": "https://assets.hardcover.app/edition/897471/2e09544bb6db159e3d531f4db4bcd8d4467cd494.jpeg",
       "authors": [
-        "Timothy Zahn",
-        "Marc Thompson"
+        "Marc Thompson",
+        "Timothy Zahn"
       ],
-      "series": "Star Wars Canon",
+      "series": "Star Wars Disney Canon Novel",
       "seriesPosition": null
     },
     {
@@ -1426,7 +1462,7 @@
         "Benedict Jacka"
       ],
       "series": "Alex Verus",
-      "seriesPosition": 11
+      "seriesPosition": "11"
     },
     {
       "id": 476302,
@@ -1437,7 +1473,7 @@
         "Benedict Jacka"
       ],
       "series": "Alex Verus",
-      "seriesPosition": 10
+      "seriesPosition": "10"
     },
     {
       "id": 427507,
@@ -1448,7 +1484,7 @@
         "Naomi Novik"
       ],
       "series": "The Scholomance",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 336562,
@@ -1458,7 +1494,7 @@
       "authors": [
         "Timothy Zahn"
       ],
-      "series": "Star Wars Canon",
+      "series": "Star Wars Disney Canon Novel",
       "seriesPosition": null
     },
     {
@@ -1470,7 +1506,7 @@
         "Richard Kadrey"
       ],
       "series": "Sandman Slim",
-      "seriesPosition": 8
+      "seriesPosition": "8"
     },
     {
       "id": 20941,
@@ -1481,7 +1517,7 @@
         "Tamsyn Muir"
       ],
       "series": "The Locked Tomb",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 427966,
@@ -1492,7 +1528,7 @@
         "Brandon Sanderson"
       ],
       "series": "The Mistborn Saga",
-      "seriesPosition": 6
+      "seriesPosition": "6"
     },
     {
       "id": 374090,
@@ -1503,7 +1539,7 @@
         "V. E. Schwab"
       ],
       "series": "Shades of Magic",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 270843,
@@ -1514,7 +1550,7 @@
         "Kevin Hearne"
       ],
       "series": "The Iron Druid Chronicles",
-      "seriesPosition": 7
+      "seriesPosition": "7"
     },
     {
       "id": 476361,
@@ -1525,18 +1561,18 @@
         "Benedict Jacka"
       ],
       "series": "Alex Verus",
-      "seriesPosition": 8
+      "seriesPosition": "8"
     },
     {
       "id": 361447,
       "slug": "cold-days",
       "title": "Cold Days",
-      "cover": "https://assets.hardcover.app/external_data/59738479/d303b2f29719a6f0647b4dab145e3fc0da38aba1.jpeg",
+      "cover": "https://assets.hardcover.app/editions/31687299/5912719511098237.jpg",
       "authors": [
         "Jim Butcher"
       ],
       "series": "The Dresden Files",
-      "seriesPosition": 14
+      "seriesPosition": "14"
     },
     {
       "id": 374131,
@@ -1544,11 +1580,10 @@
       "title": "Words of Radiance",
       "cover": "https://assets.hardcover.app/edition/419923/7428154-L.jpg",
       "authors": [
-        "Brandon Sanderson",
-        "Michael Kramer"
+        "Brandon Sanderson"
       ],
       "series": "The Stormlight Archive",
-      "seriesPosition": 2
+      "seriesPosition": "2"
     },
     {
       "id": 89169,
@@ -1560,7 +1595,7 @@
         "MacLeod Andrews"
       ],
       "series": "Sandman Slim",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 445922,
@@ -1571,7 +1606,7 @@
         "Benedict Jacka"
       ],
       "series": "Alex Verus",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 427664,
@@ -1582,7 +1617,7 @@
         "Michael J. Sullivan"
       ],
       "series": "The Riyria Revelations",
-      "seriesPosition": 1
+      "seriesPosition": "1"
     },
     {
       "id": 462825,
@@ -1593,7 +1628,7 @@
         "Michael J. Sullivan"
       ],
       "series": "The Riyria Revelations",
-      "seriesPosition": 3
+      "seriesPosition": "3"
     },
     {
       "id": 476364,
@@ -1604,7 +1639,7 @@
         "Benedict Jacka"
       ],
       "series": "Alex Verus",
-      "seriesPosition": 7
+      "seriesPosition": "7"
     },
     {
       "id": 476078,
@@ -1615,7 +1650,7 @@
         "Benedict Jacka"
       ],
       "series": "Alex Verus",
-      "seriesPosition": 6
+      "seriesPosition": "6"
     },
     {
       "id": 429189,
@@ -1627,7 +1662,7 @@
         "Luke Daniels"
       ],
       "series": "The Iron Druid Chronicles",
-      "seriesPosition": 6
+      "seriesPosition": "6"
     },
     {
       "id": 135725,
@@ -1638,7 +1673,7 @@
         "Brandon Sanderson"
       ],
       "series": "The Mistborn Saga",
-      "seriesPosition": 5
+      "seriesPosition": "5"
     },
     {
       "id": 429265,
@@ -1649,7 +1684,7 @@
         "Kevin Hearne"
       ],
       "series": "The Iron Druid Chronicles",
-      "seriesPosition": 5
+      "seriesPosition": "5"
     },
     {
       "id": 330249,
@@ -1660,7 +1695,7 @@
         "Brandon Sanderson"
       ],
       "series": "The Mistborn Saga",
-      "seriesPosition": 4
+      "seriesPosition": "4"
     },
     {
       "id": 437919,
@@ -1671,7 +1706,7 @@
         "Michael J. Sullivan"
       ],
       "series": "The Riyria Revelations",
-      "seriesPosition": 5
+      "seriesPosition": "5"
     }
   ],
   "didNotFinish": [],
@@ -1689,7 +1724,18 @@
               "Rachel Gillig"
             ],
             "series": "The Shepherd King",
-            "seriesPosition": 1
+            "seriesPosition": "1"
+          },
+          {
+            "id": 674917,
+            "slug": "two-twisted-crowns",
+            "title": "Two Twisted Crowns",
+            "cover": "https://assets.hardcover.app/external_data/61236890/72f0738a5c403dcc92bce62a3c2ee10dd9aa199e.jpeg",
+            "authors": [
+              "Rachel Gillig"
+            ],
+            "series": "The Shepherd King",
+            "seriesPosition": "2"
           }
         ]
       }
@@ -1707,7 +1753,7 @@
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           },
           {
             "id": 183010,
@@ -1718,7 +1764,7 @@
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 2
+            "seriesPosition": "2"
           },
           {
             "id": 309362,
@@ -1729,7 +1775,7 @@
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 3
+            "seriesPosition": "3"
           },
           {
             "id": 341498,
@@ -1740,19 +1786,18 @@
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 4
+            "seriesPosition": "4"
           },
           {
             "id": 1244,
             "slug": "death-masks",
             "title": "Death Masks",
-            "cover": "https://assets.hardcover.app/external_data/59738371/8e1ad815a9ca924e206d06c6b808c7616cc4fe3c.jpeg",
+            "cover": "https://assets.hardcover.app/editions/31450083/9232522244511468.jpg",
             "authors": [
-              "Jim Butcher",
-              "James Marsters"
+              "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 5
+            "seriesPosition": "5"
           },
           {
             "id": 427480,
@@ -1763,7 +1808,7 @@
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 6
+            "seriesPosition": "6"
           },
           {
             "id": 255544,
@@ -1774,7 +1819,7 @@
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 7
+            "seriesPosition": "7"
           },
           {
             "id": 98856,
@@ -1785,30 +1830,18 @@
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 8
-          },
-          {
-            "id": 117922,
-            "slug": "white-night",
-            "title": "White Night",
-            "cover": "https://assets.hardcover.app/external_data/26679145/0910f7baaee7f2f7245e3bd25ba3a221c2a1fd95.jpeg",
-            "authors": [
-              "Jim Butcher",
-              "Chris McGrath"
-            ],
-            "series": "The Dresden Files",
-            "seriesPosition": 9
+            "seriesPosition": "8"
           },
           {
             "id": 213831,
             "slug": "small-favor",
             "title": "Small Favor",
-            "cover": "https://assets.hardcover.app/edition/30422731/507bdab33027b79e3609c563d00388d6c35b2558.jpeg",
+            "cover": "https://assets.hardcover.app/editions/30446742/838735219618985.jpg",
             "authors": [
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 10
+            "seriesPosition": "10"
           },
           {
             "id": 187503,
@@ -1819,7 +1852,7 @@
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 11
+            "seriesPosition": "11"
           },
           {
             "id": 252854,
@@ -1830,7 +1863,7 @@
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 12
+            "seriesPosition": "12"
           },
           {
             "id": 333169,
@@ -1841,18 +1874,18 @@
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 13
+            "seriesPosition": "13"
           },
           {
             "id": 361447,
             "slug": "cold-days",
             "title": "Cold Days",
-            "cover": "https://assets.hardcover.app/external_data/59738479/d303b2f29719a6f0647b4dab145e3fc0da38aba1.jpeg",
+            "cover": "https://assets.hardcover.app/editions/31687299/5912719511098237.jpg",
             "authors": [
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 14
+            "seriesPosition": "14"
           },
           {
             "id": 458592,
@@ -1863,18 +1896,18 @@
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 15
+            "seriesPosition": "15"
           },
           {
             "id": 446523,
             "slug": "peace-talks",
             "title": "Peace Talks",
-            "cover": "https://assets.hardcover.app/external_data/59738498/edb1be8d1015aeab2f7c04229b5878ba576e9fd7.jpeg",
+            "cover": "https://assets.hardcover.app/editions/30654959/8813020130176361.jpg",
             "authors": [
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 16
+            "seriesPosition": "16"
           },
           {
             "id": 342378,
@@ -1885,7 +1918,7 @@
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 17
+            "seriesPosition": "17"
           },
           {
             "id": 482466,
@@ -1896,7 +1929,7 @@
               "Jim Butcher"
             ],
             "series": "The Dresden Files",
-            "seriesPosition": 18
+            "seriesPosition": "18"
           }
         ]
       }
@@ -1909,12 +1942,12 @@
             "id": 970687,
             "slug": "talonsister",
             "title": "Talonsister",
-            "cover": "https://assets.hardcover.app/external_data/60126680/969b576b0c1733f9a7e814ae28b40521ad228dc3.jpeg",
+            "cover": "https://assets.hardcover.app/edition/30995639/fc3d65b2c3e7aa049fe093552618cb7834f22d5a.jpeg",
             "authors": [
               "Jen Williams"
             ],
             "series": "Talon Duology",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           },
           {
             "id": 1675881,
@@ -1925,7 +1958,7 @@
               "Jen Williams"
             ],
             "series": "Talon Duology",
-            "seriesPosition": 2
+            "seriesPosition": "2"
           }
         ]
       }
@@ -1943,7 +1976,7 @@
               "Brandon Sanderson"
             ],
             "series": "The Stormlight Archive",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           },
           {
             "id": 374131,
@@ -1951,22 +1984,21 @@
             "title": "Words of Radiance",
             "cover": "https://assets.hardcover.app/edition/419923/7428154-L.jpg",
             "authors": [
-              "Brandon Sanderson",
-              "Michael Kramer"
+              "Brandon Sanderson"
             ],
             "series": "The Stormlight Archive",
-            "seriesPosition": 2
+            "seriesPosition": "2"
           },
           {
             "id": 459452,
             "slug": "oathbringer",
             "title": "Oathbringer",
-            "cover": "https://assets.hardcover.app/external_data/42422093/ea15fb4de9d1cf70cd3606c1710e83fc8075826a.jpeg",
+            "cover": "https://assets.hardcover.app/edition/30455612/1deeb21c2576843fe4556815fea2eb784e406908.jpeg",
             "authors": [
               "Brandon Sanderson"
             ],
             "series": "The Stormlight Archive",
-            "seriesPosition": 3
+            "seriesPosition": "3"
           },
           {
             "id": 427522,
@@ -1977,42 +2009,42 @@
               "Brandon Sanderson"
             ],
             "series": "The Stormlight Archive",
-            "seriesPosition": 4
+            "seriesPosition": "4"
           }
         ],
         "The Mistborn Saga": [
           {
+            "id": 369692,
+            "slug": "mistborn",
+            "title": "Mistborn: The Final Empire",
+            "cover": "https://assets.hardcover.app/edition/5195452/8c6af4492dd7ef9eed7c1e40abefc79f23df2d2f.jpeg",
+            "authors": [
+              "Brandon Sanderson"
+            ],
+            "series": "The Mistborn Saga",
+            "seriesPosition": "1"
+          },
+          {
             "id": 427707,
-            "slug": "mistborn-trilogy-2001",
+            "slug": "mistborn-trilogy-2009",
             "title": "Mistborn Trilogy",
             "cover": "https://assets.hardcover.app/edition/66352/df7199fd1b57f9b55c718fa78ee3564ef73af0ae.jpeg",
             "authors": [
               "Brandon Sanderson"
             ],
             "series": "The Mistborn Saga",
-            "seriesPosition": null
-          },
-          {
-            "id": 369692,
-            "slug": "mistborn",
-            "title": "Mistborn: The Final Empire",
-            "cover": "https://assets.hardcover.app/external_data/31614753/800579f7d675e7d2cd01043ddc57eb6ff724a6a5.jpeg",
-            "authors": [
-              "Brandon Sanderson"
-            ],
-            "series": "The Mistborn Saga",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           },
           {
             "id": 427383,
             "slug": "the-well-of-ascension",
             "title": "The Well of Ascension",
-            "cover": "https://assets.hardcover.app/book_mappings/7332358/43f95ab5370016fe0b2eddf9adee5f338850e6c4.jpeg",
+            "cover": "https://assets.hardcover.app/edition/11581188/a697a2121fce4b8f163f227e0cf3c2bd3fd02089.jpeg",
             "authors": [
               "Brandon Sanderson"
             ],
             "series": "The Mistborn Saga",
-            "seriesPosition": 2
+            "seriesPosition": "2"
           },
           {
             "id": 103241,
@@ -2023,7 +2055,7 @@
               "Brandon Sanderson"
             ],
             "series": "The Mistborn Saga",
-            "seriesPosition": 3
+            "seriesPosition": "3"
           },
           {
             "id": 330249,
@@ -2034,7 +2066,7 @@
               "Brandon Sanderson"
             ],
             "series": "The Mistborn Saga",
-            "seriesPosition": 4
+            "seriesPosition": "4"
           },
           {
             "id": 135725,
@@ -2045,7 +2077,7 @@
               "Brandon Sanderson"
             ],
             "series": "The Mistborn Saga",
-            "seriesPosition": 5
+            "seriesPosition": "5"
           },
           {
             "id": 427966,
@@ -2056,7 +2088,7 @@
               "Brandon Sanderson"
             ],
             "series": "The Mistborn Saga",
-            "seriesPosition": 6
+            "seriesPosition": "6"
           }
         ],
         "Elantris": [
@@ -2069,7 +2101,7 @@
               "Brandon Sanderson"
             ],
             "series": "Elantris",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           }
         ],
         "The Reckoners": [
@@ -2082,7 +2114,7 @@
               "Brandon Sanderson"
             ],
             "series": "The Reckoners",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           },
           {
             "id": 427458,
@@ -2093,7 +2125,7 @@
               "Brandon Sanderson"
             ],
             "series": "The Reckoners",
-            "seriesPosition": 2
+            "seriesPosition": "2"
           },
           {
             "id": 427477,
@@ -2104,7 +2136,7 @@
               "Brandon Sanderson"
             ],
             "series": "The Reckoners",
-            "seriesPosition": 3
+            "seriesPosition": "3"
           }
         ],
         "Skyward": [
@@ -2112,12 +2144,12 @@
             "id": 427749,
             "slug": "skyward",
             "title": "Skyward",
-            "cover": "https://assets.hardcover.app/edition/30095628/5c92d3d2227ee5e279961695e463779a9e7508ed.jpeg",
+            "cover": "https://assets.hardcover.app/external_data/37373868/d0ade48e00d3ec6ba0c30f961f0f7f6fcbeab5a4.jpeg",
             "authors": [
               "Brandon Sanderson"
             ],
             "series": "Skyward",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           }
         ],
         "Warbreaker": [
@@ -2130,7 +2162,7 @@
               "Brandon Sanderson"
             ],
             "series": "Warbreaker",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           }
         ]
       }
@@ -2148,7 +2180,7 @@
               "Veronica Roth"
             ],
             "series": "Divergent",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           },
           {
             "id": 20970,
@@ -2159,7 +2191,7 @@
               "Veronica Roth"
             ],
             "series": "Divergent",
-            "seriesPosition": 2
+            "seriesPosition": "2"
           },
           {
             "id": 429258,
@@ -2170,7 +2202,7 @@
               "Veronica Roth"
             ],
             "series": "Divergent",
-            "seriesPosition": 3
+            "seriesPosition": "3"
           }
         ]
       }
@@ -2188,7 +2220,7 @@
               "Martha Wells"
             ],
             "series": "The Murderbot Diaries",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           },
           {
             "id": 427537,
@@ -2199,7 +2231,7 @@
               "Martha Wells"
             ],
             "series": "The Murderbot Diaries",
-            "seriesPosition": 2
+            "seriesPosition": "2"
           },
           {
             "id": 427560,
@@ -2210,7 +2242,7 @@
               "Martha Wells"
             ],
             "series": "The Murderbot Diaries",
-            "seriesPosition": 3
+            "seriesPosition": "3"
           },
           {
             "id": 432448,
@@ -2221,7 +2253,7 @@
               "Martha Wells"
             ],
             "series": "The Murderbot Diaries",
-            "seriesPosition": 4
+            "seriesPosition": "4"
           },
           {
             "id": 440171,
@@ -2232,7 +2264,7 @@
               "Martha Wells"
             ],
             "series": "The Murderbot Diaries",
-            "seriesPosition": 5
+            "seriesPosition": "5"
           },
           {
             "id": 435167,
@@ -2243,7 +2275,7 @@
               "Martha Wells"
             ],
             "series": "The Murderbot Diaries",
-            "seriesPosition": 6
+            "seriesPosition": "6"
           },
           {
             "id": 462038,
@@ -2254,7 +2286,7 @@
               "Martha Wells"
             ],
             "series": "The Murderbot Diaries",
-            "seriesPosition": 7
+            "seriesPosition": "7"
           }
         ]
       }
@@ -2272,7 +2304,7 @@
               "Benedict Jacka"
             ],
             "series": "Alex Verus",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           },
           {
             "id": 445924,
@@ -2283,7 +2315,7 @@
               "Benedict Jacka"
             ],
             "series": "Alex Verus",
-            "seriesPosition": 2
+            "seriesPosition": "2"
           },
           {
             "id": 445923,
@@ -2294,7 +2326,7 @@
               "Benedict Jacka"
             ],
             "series": "Alex Verus",
-            "seriesPosition": 3
+            "seriesPosition": "3"
           },
           {
             "id": 476430,
@@ -2305,7 +2337,7 @@
               "Benedict Jacka"
             ],
             "series": "Alex Verus",
-            "seriesPosition": 4
+            "seriesPosition": "4"
           },
           {
             "id": 476080,
@@ -2316,7 +2348,7 @@
               "Benedict Jacka"
             ],
             "series": "Alex Verus",
-            "seriesPosition": 5
+            "seriesPosition": "5"
           },
           {
             "id": 476078,
@@ -2327,7 +2359,7 @@
               "Benedict Jacka"
             ],
             "series": "Alex Verus",
-            "seriesPosition": 6
+            "seriesPosition": "6"
           },
           {
             "id": 476364,
@@ -2338,7 +2370,7 @@
               "Benedict Jacka"
             ],
             "series": "Alex Verus",
-            "seriesPosition": 7
+            "seriesPosition": "7"
           },
           {
             "id": 476361,
@@ -2349,7 +2381,7 @@
               "Benedict Jacka"
             ],
             "series": "Alex Verus",
-            "seriesPosition": 8
+            "seriesPosition": "8"
           },
           {
             "id": 476354,
@@ -2360,7 +2392,7 @@
               "Benedict Jacka"
             ],
             "series": "Alex Verus",
-            "seriesPosition": 9
+            "seriesPosition": "9"
           },
           {
             "id": 476302,
@@ -2371,7 +2403,7 @@
               "Benedict Jacka"
             ],
             "series": "Alex Verus",
-            "seriesPosition": 10
+            "seriesPosition": "10"
           },
           {
             "id": 476299,
@@ -2382,7 +2414,7 @@
               "Benedict Jacka"
             ],
             "series": "Alex Verus",
-            "seriesPosition": 11
+            "seriesPosition": "11"
           },
           {
             "id": 476282,
@@ -2393,7 +2425,7 @@
               "Benedict Jacka"
             ],
             "series": "Alex Verus",
-            "seriesPosition": 12
+            "seriesPosition": "12"
           }
         ]
       }
@@ -2411,7 +2443,7 @@
               "Tamsyn Muir"
             ],
             "series": "The Locked Tomb",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           },
           {
             "id": 215901,
@@ -2422,18 +2454,18 @@
               "Tamsyn Muir"
             ],
             "series": "The Locked Tomb",
-            "seriesPosition": 2
+            "seriesPosition": "2"
           },
           {
             "id": 462513,
             "slug": "nona-the-ninth",
             "title": "Nona the Ninth",
-            "cover": "https://assets.hardcover.app/edition/30413195/d33585d4c8b7aeb0ba3e5ea4eca577a9961fd77b.jpeg",
+            "cover": "https://assets.hardcover.app/external_data/4226532/1fe0718f02567aec6d95051ccddf1333fdf6196e.jpeg",
             "authors": [
               "Tamsyn Muir"
             ],
             "series": "The Locked Tomb",
-            "seriesPosition": 3
+            "seriesPosition": "3"
           }
         ]
       }
@@ -2452,7 +2484,7 @@
               "Bronson Pinchot"
             ],
             "series": "Grimnoir Chronicles",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           },
           {
             "id": 469048,
@@ -2464,7 +2496,7 @@
               "Bronson Pinchot"
             ],
             "series": "Grimnoir Chronicles",
-            "seriesPosition": 2
+            "seriesPosition": "2"
           },
           {
             "id": 1832269,
@@ -2476,7 +2508,7 @@
               "Bronson Pinchot"
             ],
             "series": "Grimnoir Chronicles",
-            "seriesPosition": 3
+            "seriesPosition": "3"
           }
         ]
       }
@@ -2491,10 +2523,11 @@
             "title": "Battle Mage",
             "cover": "https://assets.hardcover.app/book/447026/ad97a2ba-23e9-485b-8578-bf023d4d2612.jpg",
             "authors": [
-              "Peter A. Flannery"
+              "Peter A. Flannery",
+              "R.D. Watson"
             ],
             "series": "The Souls Of Wrath",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           }
         ]
       }
@@ -2502,7 +2535,7 @@
     "Timothy Zahn": {
       "standalone": [],
       "series": {
-        "Star Wars Canon": [
+        "Star Wars Disney Canon Novel": [
           {
             "id": 379785,
             "slug": "thrawn-alliances",
@@ -2511,7 +2544,7 @@
             "authors": [
               "Timothy Zahn"
             ],
-            "series": "Star Wars Canon",
+            "series": "Star Wars Disney Canon Novel",
             "seriesPosition": null
           },
           {
@@ -2522,19 +2555,7 @@
             "authors": [
               "Timothy Zahn"
             ],
-            "series": "Star Wars Canon",
-            "seriesPosition": null
-          },
-          {
-            "id": 445765,
-            "slug": "thrawn-treason",
-            "title": "Thrawn: Treason",
-            "cover": "https://assets.hardcover.app/edition/897471/2e09544bb6db159e3d531f4db4bcd8d4467cd494.jpeg",
-            "authors": [
-              "Timothy Zahn",
-              "Marc Thompson"
-            ],
-            "series": "Star Wars Canon",
+            "series": "Star Wars Disney Canon Novel",
             "seriesPosition": null
           },
           {
@@ -2545,7 +2566,7 @@
             "authors": [
               "Timothy Zahn"
             ],
-            "series": "Star Wars Canon",
+            "series": "Star Wars Disney Canon Novel",
             "seriesPosition": null
           }
         ]
@@ -2564,7 +2585,7 @@
               "Kevin Hearne"
             ],
             "series": "The Iron Druid Chronicles",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           },
           {
             "id": 429262,
@@ -2575,7 +2596,7 @@
               "Kevin Hearne"
             ],
             "series": "The Iron Druid Chronicles",
-            "seriesPosition": 2
+            "seriesPosition": "2"
           },
           {
             "id": 135686,
@@ -2586,7 +2607,7 @@
               "Kevin Hearne"
             ],
             "series": "The Iron Druid Chronicles",
-            "seriesPosition": 3
+            "seriesPosition": "3"
           },
           {
             "id": 429264,
@@ -2597,7 +2618,7 @@
               "Kevin Hearne"
             ],
             "series": "The Iron Druid Chronicles",
-            "seriesPosition": 4
+            "seriesPosition": "4"
           },
           {
             "id": 429265,
@@ -2608,7 +2629,7 @@
               "Kevin Hearne"
             ],
             "series": "The Iron Druid Chronicles",
-            "seriesPosition": 5
+            "seriesPosition": "5"
           },
           {
             "id": 429189,
@@ -2620,7 +2641,7 @@
               "Luke Daniels"
             ],
             "series": "The Iron Druid Chronicles",
-            "seriesPosition": 6
+            "seriesPosition": "6"
           },
           {
             "id": 270843,
@@ -2631,7 +2652,7 @@
               "Kevin Hearne"
             ],
             "series": "The Iron Druid Chronicles",
-            "seriesPosition": 7
+            "seriesPosition": "7"
           },
           {
             "id": 150498,
@@ -2642,7 +2663,7 @@
               "Kevin Hearne"
             ],
             "series": "The Iron Druid Chronicles",
-            "seriesPosition": 8
+            "seriesPosition": "8"
           }
         ]
       }
@@ -2664,18 +2685,6 @@
       "series": {
         "Sandman Slim": [
           {
-            "id": 90461,
-            "slug": "sandman-slim",
-            "title": "Sandman Slim",
-            "cover": "https://assets.hardcover.app/edition/30400324/175417a99177fcd5598741dc8c8f896430097718.jpeg",
-            "authors": [
-              "Richard Kadrey",
-              "MacLeod Andrews"
-            ],
-            "series": "Sandman Slim",
-            "seriesPosition": 1
-          },
-          {
             "id": 5959,
             "slug": "kill-the-dead",
             "title": "Kill the Dead",
@@ -2684,7 +2693,7 @@
               "Richard Kadrey"
             ],
             "series": "Sandman Slim",
-            "seriesPosition": 2
+            "seriesPosition": "2"
           },
           {
             "id": 89169,
@@ -2696,7 +2705,7 @@
               "MacLeod Andrews"
             ],
             "series": "Sandman Slim",
-            "seriesPosition": 3
+            "seriesPosition": "3"
           },
           {
             "id": 430150,
@@ -2707,18 +2716,19 @@
               "Richard Kadrey"
             ],
             "series": "Sandman Slim",
-            "seriesPosition": 4
+            "seriesPosition": "4"
           },
           {
             "id": 458362,
             "slug": "kill-city-blues",
-            "title": "Kill City Blues",
+            "title": "Kill City Blues: A Sandman Slim Novel",
             "cover": "https://assets.hardcover.app/edition/30610606/15783828._SX98_.jpg",
             "authors": [
-              "Richard Kadrey"
+              "Richard Kadrey",
+              "MacLeod Andrews"
             ],
             "series": "Sandman Slim",
-            "seriesPosition": 5
+            "seriesPosition": "5"
           },
           {
             "id": 458363,
@@ -2730,18 +2740,19 @@
               "MacLeod Andrews"
             ],
             "series": "Sandman Slim",
-            "seriesPosition": 6
+            "seriesPosition": "6"
           },
           {
             "id": 430479,
             "slug": "killing-pretty",
-            "title": "Killing Pretty",
+            "title": "Killing Pretty: A Sandman Slim Novel",
             "cover": "https://assets.hardcover.app/external_data/59379407/add71c572dfdb6f8eefce54cb6216222093011f5.jpeg",
             "authors": [
-              "Richard Kadrey"
+              "Richard Kadrey",
+              "MacLeod Andrews"
             ],
             "series": "Sandman Slim",
-            "seriesPosition": 7
+            "seriesPosition": "7"
           },
           {
             "id": 461328,
@@ -2752,7 +2763,7 @@
               "Richard Kadrey"
             ],
             "series": "Sandman Slim",
-            "seriesPosition": 8
+            "seriesPosition": "8"
           },
           {
             "id": 461327,
@@ -2763,7 +2774,7 @@
               "Richard Kadrey"
             ],
             "series": "Sandman Slim",
-            "seriesPosition": 9
+            "seriesPosition": "9"
           },
           {
             "id": 458387,
@@ -2774,12 +2785,31 @@
               "Richard Kadrey"
             ],
             "series": "Sandman Slim",
-            "seriesPosition": 10
+            "seriesPosition": "10"
           }
         ]
       }
     },
-    "J.K. Rowling": {
+    "Chris McGrath": {
+      "standalone": [],
+      "series": {
+        "The Dresden Files": [
+          {
+            "id": 117922,
+            "slug": "white-night",
+            "title": "White Night",
+            "cover": "https://assets.hardcover.app/external_data/3685911/0910f7baaee7f2f7245e3bd25ba3a221c2a1fd95.jpeg",
+            "authors": [
+              "Chris McGrath",
+              "Jim Butcher"
+            ],
+            "series": "The Dresden Files",
+            "seriesPosition": "9"
+          }
+        ]
+      }
+    },
+    "Olly Moss": {
       "standalone": [],
       "series": {
         "Harry Potter": [
@@ -2789,11 +2819,11 @@
             "title": "Harry Potter: The Complete Collection",
             "cover": "https://assets.hardcover.app/external_data/29333921/ed5f38e835d29945b85df089ede6e988b67215b7.jpeg",
             "authors": [
-              "J.K. Rowling",
-              "Olly Moss"
+              "Olly Moss",
+              "J.K. Rowling"
             ],
             "series": "Harry Potter",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           }
         ]
       }
@@ -2812,7 +2842,7 @@
               "Reg Keeland"
             ],
             "series": "Millennium",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           }
         ]
       }
@@ -2830,7 +2860,7 @@
               "Robin Hobb"
             ],
             "series": "The Tawny Man",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           }
         ],
         "The Farseer Trilogy": [
@@ -2838,12 +2868,12 @@
             "id": 65020,
             "slug": "the-farseer-trilogy",
             "title": "The Farseer Trilogy",
-            "cover": "https://assets.hardcover.app/edition/642151/68e97103870cf5e81b4e2cd855e83ae742992c76.jpeg",
+            "cover": "https://assets.hardcover.app/external_data/4056453/95fea2bbebc7262a63006066102137067a314851.jpeg",
             "authors": [
               "Robin Hobb"
             ],
             "series": "The Farseer Trilogy",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           },
           {
             "id": 54244,
@@ -2851,11 +2881,10 @@
             "title": "Royal Assassin",
             "cover": "https://assets.hardcover.app/editions/18512423/6859632616769302.jpg",
             "authors": [
-              "Robin Hobb",
-              "Stephen Youll"
+              "Robin Hobb"
             ],
             "series": "The Farseer Trilogy",
-            "seriesPosition": 2
+            "seriesPosition": "2"
           },
           {
             "id": 149300,
@@ -2866,7 +2895,7 @@
               "Robin Hobb"
             ],
             "series": "The Farseer Trilogy",
-            "seriesPosition": 3
+            "seriesPosition": "3"
           }
         ]
       }
@@ -2884,7 +2913,7 @@
               "Michael J. Sullivan"
             ],
             "series": "The Riyria Chronicles",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           }
         ],
         "The Riyria Revelations": [
@@ -2897,7 +2926,7 @@
               "Michael J. Sullivan"
             ],
             "series": "The Riyria Revelations",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           },
           {
             "id": 462825,
@@ -2908,7 +2937,7 @@
               "Michael J. Sullivan"
             ],
             "series": "The Riyria Revelations",
-            "seriesPosition": 3
+            "seriesPosition": "3"
           },
           {
             "id": 437919,
@@ -2919,7 +2948,7 @@
               "Michael J. Sullivan"
             ],
             "series": "The Riyria Revelations",
-            "seriesPosition": 5
+            "seriesPosition": "5"
           }
         ]
       }
@@ -2932,7 +2961,6 @@
           "title": "Ondskan",
           "cover": "https://assets.hardcover.app/edition/30574473/3818a9b64e6f73422a9f4857cfb4029012902f6e.jpeg",
           "authors": [
-            "Jan Guillou",
             "Jan Guillou"
           ],
           "series": null,
@@ -2940,6 +2968,25 @@
         }
       ],
       "series": {}
+    },
+    "MacLeod Andrews": {
+      "standalone": [],
+      "series": {
+        "Sandman Slim": [
+          {
+            "id": 90461,
+            "slug": "sandman-slim",
+            "title": "Sandman Slim",
+            "cover": "https://assets.hardcover.app/edition/30400324/175417a99177fcd5598741dc8c8f896430097718.jpeg",
+            "authors": [
+              "MacLeod Andrews",
+              "Richard Kadrey"
+            ],
+            "series": "Sandman Slim",
+            "seriesPosition": "1"
+          }
+        ]
+      }
     },
     "Amie Kaufman": {
       "standalone": [],
@@ -2955,7 +3002,26 @@
               "Jay Kristoff"
             ],
             "series": "The Aurora Cycle",
-            "seriesPosition": 1
+            "seriesPosition": "1"
+          }
+        ]
+      }
+    },
+    "Marc Thompson": {
+      "standalone": [],
+      "series": {
+        "Star Wars Disney Canon Novel": [
+          {
+            "id": 445765,
+            "slug": "thrawn-treason",
+            "title": "Thrawn: Treason",
+            "cover": "https://assets.hardcover.app/edition/897471/2e09544bb6db159e3d531f4db4bcd8d4467cd494.jpeg",
+            "authors": [
+              "Marc Thompson",
+              "Timothy Zahn"
+            ],
+            "series": "Star Wars Disney Canon Novel",
+            "seriesPosition": null
           }
         ]
       }
@@ -2973,7 +3039,7 @@
               "Naomi Novik"
             ],
             "series": "The Scholomance",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           }
         ]
       }
@@ -2991,7 +3057,7 @@
               "V. E. Schwab"
             ],
             "series": "Shades of Magic",
-            "seriesPosition": 1
+            "seriesPosition": "1"
           }
         ]
       }

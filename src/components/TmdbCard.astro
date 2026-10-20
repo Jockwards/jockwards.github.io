@@ -1,0 +1,92 @@
+---
+import { ui, type Locale } from "../lib/i18n";
+import type { TmdbData } from "../lib/tmdb";
+import ReviewScore from "./ReviewScore.astro";
+
+interface Props {
+  data: TmdbData;
+  score?: number;
+  lang?: Locale;
+}
+
+const { data, score, lang = "sv" } = Astro.props;
+const copy = ui[lang];
+---
+
+<details class="tmdb-card" open>
+  <summary class="tmdb-card-header">
+    <h2 class="tmdb-card-title">{data.title}</h2>
+    <ReviewScore score={score} lang={lang} />
+  </summary>
+
+  <div class="tmdb-metadata">
+    <div class="tmdb-poster">
+      {
+        data.poster_path && (
+          <img
+            src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+            alt={copy.posterAlt(data.title)}
+            loading="lazy"
+            decoding="async"
+            width="500"
+            height="750"
+          />
+        )
+      }
+    </div>
+
+    <div class="tmdb-details">
+      <a
+        class="tmdb-external-link"
+        href={`https://www.themoviedb.org/${data.type}/${data.id}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {copy.viewOnTmdb}
+      </a>
+      <div class="tmdb-info-grid">
+        {
+          data.release_date && (
+            <div class="tmdb-info-item">
+              <strong>{copy.premiereDate}:</strong>
+              <span>{data.release_date}</span>
+            </div>
+          )
+        }
+        {
+          data.creator ? (
+            <div class="tmdb-info-item">
+              <strong>{copy.creator}:</strong>
+              <span>{data.creator}</span>
+            </div>
+          ) : (
+            data.director && (
+              <div class="tmdb-info-item">
+                <strong>{copy.director}:</strong>
+                <span>{data.director}</span>
+              </div>
+            )
+          )
+        }
+      </div>
+
+      {
+        data.cast.length > 0 && (
+          <div class="tmdb-info-item">
+            <strong>{copy.cast}:</strong>
+            <ul>
+              {data.cast.map((actor) => (
+                <li>
+                  {actor.name}
+                  {actor.character && (
+                    <span class="cast-role"> som {actor.character}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</details>

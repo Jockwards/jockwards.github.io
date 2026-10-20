@@ -1,0 +1,32 @@
+---
+import { ui, type Locale } from "../lib/i18n";
+
+interface Props {
+  score?: number;
+  lang?: Locale;
+}
+
+const { score, lang = "sv" } = Astro.props;
+const scoreClass =
+  score === undefined
+    ? ""
+    : score <= 3.33
+      ? "score-bronze"
+      : score <= 6.66
+        ? "score-silver"
+        : "score-gold";
+---
+
+{
+  score !== undefined && (
+    <div
+      class={`tmdb-review-score ${scoreClass}`}
+      aria-label={ui[lang].rating(score)}
+    >
+      <span aria-hidden="true">⭐ {score}</span>
+      <span class="tmdb-review-score-label" aria-hidden="true">
+        /10
+      </span>
+    </div>
+  )
+}

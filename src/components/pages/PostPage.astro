@@ -1,0 +1,31 @@
+---
+import PostLayout from "../../layouts/PostLayout.astro";
+import { getHardcoverData } from "../../lib/hardcover";
+import { getAllPosts, getPostAlternates, type Post } from "../../lib/posts";
+import { getTmdbData } from "../../lib/tmdb";
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+
+const tmdbData =
+  post.data.tmdb_id && post.data.tmdb_type
+    ? await getTmdbData(post.data.tmdb_id, post.data.tmdb_type)
+    : null;
+
+const hardcoverData = post.data.hardcover_id
+  ? await getHardcoverData(post.data.hardcover_id)
+  : null;
+
+const allPosts = await getAllPosts();
+const alternates = getPostAlternates(post, allPosts);
+---
+
+<PostLayout
+  post={post}
+  tmdbData={tmdbData}
+  hardcoverData={hardcoverData}
+  alternates={alternates}
+/>

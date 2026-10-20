@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../PostCard.astro";
+import {
+  allAlternates,
+  tagLabel,
+  ui,
+  type Locale,
+} from "../../lib/i18n";
+import { tagSlug, type Post } from "../../lib/posts";
+
+interface Props {
+  lang?: Locale;
+  tag: string;
+  posts: Post[];
+}
+
+const { lang = "sv", tag, posts } = Astro.props;
+const copy = ui[lang];
+const label = tagLabel(tag, lang);
+const title = copy.tagPageTitle(label);
+---
+
+<BaseLayout
+  title={title}
+  description={title}
+  lang={lang}
+  alternates={allAlternates(`/tags/${tagSlug(tag)}/`)}
+>
+  <section aria-labelledby="tag-heading">
+    <h1 id="tag-heading" class="section-header">{title}</h1>
+
+    {
+      posts.length > 0 ? (
+        <div class="posts-container">
+          {posts.map((post) => (
+            <PostCard post={post} headingLevel="h2" />
+          ))}
+        </div>
+      ) : (
+        <p>{copy.noTaggedPosts}</p>
+      )
+    }
+  </section>
+</BaseLayout>

@@ -1,28 +1,39 @@
 {
-	"name": "jocke-pa-internet",
-	"version": "1.0.0",
-	"description": "En modern men lite nördig blogg om kod, teknik och slumpmässiga tankar",
-	"scripts": {
-		"build:css": "tailwindcss -i src/assets/css/tailwind.css -o src/assets/css/bundle.css",
-		"watch:css": "tailwindcss -i src/assets/css/tailwind.css -o src/assets/css/bundle.css --watch",
-		"build:11ty": "npx @11ty/eleventy",
-		"build": "npm run build:css && npm run build:11ty",
-		"start": "npx @11ty/eleventy --serve",
-		"dev": "concurrently -k \"npm run watch:css\" \"npx @11ty/eleventy --serve --watch\""
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"@11ty/eleventy": "^3.1.2",
-		"@tailwindcss/cli": "^4.1.12",
-		"concurrently": "^9.2.1",
-		"tailwindcss": "^4.1.12"
-	},
-	"dependencies": {
-		"@11ty/eleventy-img": "^6.0.4",
-		"dotenv": "^17.2.3",
-		"eleventy-plugin-embed-everything": "^1.21.0"
-	},
-	"type": "module"
+  "name": "jocke-pa-internet",
+  "version": "1.0.0",
+  "description": "En modern men lite nördig blogg om kod, teknik och slumpmässiga tankar",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test:a11y": "node scripts/a11y-check.mjs",
+    "new:review": "tsx scripts/new-review.ts",
+    "refresh:reading": "tsx scripts/refresh-reading-list.ts",
+    "translate": "tsx scripts/translate.ts",
+    "translate:check": "tsx scripts/translate-check.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@google/genai": "^2.30.0",
+    "astro": "^7.4.1",
+    "dotenv": "^17.2.3",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.11",
+    "@axe-core/playwright": "^4.14.0",
+    "playwright": "^1.64.1",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  }
 }

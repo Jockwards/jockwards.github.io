@@ -1,14 +1,17 @@
 # Dependencies
 node_modules/
 
-# Eleventy output
+# Build output
 _site/
+dist/
+.astro/
 
-# Eleventy cache
+# Build cache
 .cache/
 
-# Generated CSS
-src/assets/css/bundle.css
+# Test output
+playwright-report/
+test-results/
 
 # Environment variables
 .env
@@ -42,6 +45,7 @@ bak_*
 
 # Documentation (internal notes)
 project-info-and-log.md
+ASTRO-MIGRATION.md
 
 # API Keys
 .env

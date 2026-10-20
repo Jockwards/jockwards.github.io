@@ -1,0 +1,26 @@
+---
+import TagPage from "../../../components/pages/TagPage.astro";
+import { getPosts, getTags, type Post } from "../../../lib/posts";
+
+export async function getStaticPaths() {
+  const posts = await getPosts("en");
+  const tags = await getTags("en");
+
+  return tags.map((tag) => ({
+    params: { tag: tag.slug },
+    props: {
+      tag: tag.name,
+      posts: posts.filter((post) => post.data.tags.includes(tag.name)),
+    },
+  }));
+}
+
+interface Props {
+  tag: string;
+  posts: Post[];
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<TagPage lang="en" tag={tag} posts={posts} />

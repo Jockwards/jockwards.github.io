@@ -1,8 +1,0 @@
-{% macro reviewScore(score) %}
-  {% if score %}
-    <div class="tmdb-review-score {{ score | reviewScoreClass }}">
-      <span>⭐ {{ score }}</span>
-      <span class="tmdb-review-score-label">/10</span>
-    </div>
-  {% endif %}
-{% endmacro %}

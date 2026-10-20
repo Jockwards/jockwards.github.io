@@ -1,0 +1,16 @@
+---
+import { tagLabel, type Locale } from "../lib/i18n";
+import { tagColor, tagPath } from "../lib/posts";
+
+interface Props {
+  tag: string;
+  lang?: Locale;
+}
+
+const { tag, lang = "sv" } = Astro.props;
+const style = `--tag-color: ${tagColor(tag)}`;
+---
+
+<a href={tagPath(tag, lang)} class="tag-link" style={style}>
+  <span class="tag-dot" aria-hidden="true"></span>{tagLabel(tag, lang)}
+</a>

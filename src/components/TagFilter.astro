@@ -1,0 +1,114 @@
+---
+import { ui, type Locale } from "../lib/i18n";
+import type { TagInfo } from "../lib/posts";
+
+interface Props {
+  tags: TagInfo[];
+  lang?: Locale;
+}
+
+const { tags, lang = "sv" } = Astro.props;
+const copy = ui[lang];
+---
+
+<nav class="tag-nav" aria-label={copy.filterAria}>
+  <button
+    type="button"
+    class="tag-link tag-filter is-active"
+    data-tag="all"
+    aria-pressed="true"
+  >
+    <span class="tag-dot" style="--tag-color: #64748b" aria-hidden="true"></span
+    >{copy.allTags}
+  </button>
+  {
+    tags.map((tag) => (
+      <button
+        type="button"
+        class="tag-link tag-filter"
+        data-tag={tag.name}
+        aria-pressed="false"
+      >
+        <span
+          class="tag-dot"
+          style={`--tag-color: ${tag.color}`}
+          aria-hidden="true"
+        />
+        {tag.label}
+      </button>
+    ))
+  }
+</nav>
+<p
+  id="filter-status"
+  class="visually-hidden"
+  role="status"
+  aria-live="polite"
+  data-status-template={copy.filterStatusTemplate}
+>
+  {copy.filterStatusInitial}
+</p>
+
+<script>
+  const filters = Array.from(
+    document.querySelectorAll<HTMLButtonElement>(".tag-filter"),
+  );
+  const posts = Array.from(
+    document.querySelectorAll<HTMLElement>("[data-tags]"),
+  );
+  const status = document.querySelector<HTMLElement>("#filter-status");
+  const statusTemplate = status?.dataset.statusTemplate;
+  let activeFilters = ["all"];
+
+  function updateButtons() {
+    filters.forEach((filter) => {
+      const isActive = activeFilters.includes(filter.dataset.tag || "");
+      filter.classList.toggle("is-active", isActive);
+      filter.setAttribute("aria-pressed", String(isActive));
+    });
+  }
+
+  function updatePosts() {
+    let visible = 0;
+
+    posts.forEach((post) => {
+      const postTags = (post.dataset.tags || "").split(",");
+      const show =
+        activeFilters.includes("all") ||
+        activeFilters.some((filter) => postTags.includes(filter));
+      post.hidden = !show;
+      if (show) visible += 1;
+    });
+
+    if (status && statusTemplate) {
+      status.textContent = statusTemplate
+        .replace("{visible}", String(visible))
+        .replace("{total}", String(posts.length));
+    }
+  }
+
+  filters.forEach((filter) => {
+    filter.addEventListener("click", () => {
+      const tag = filter.dataset.tag || "all";
+
+      if (tag === "all") {
+        activeFilters = ["all"];
+      } else {
+        activeFilters = activeFilters.filter((active) => active !== "all");
+        activeFilters = activeFilters.includes(tag)
+          ? activeFilters.filter((active) => active !== tag)
+          : [...activeFilters, tag];
+
+        if (activeFilters.length === 0) {
+          activeFilters = ["all"];
+        }
+      }
+
+      updateButtons();
+      updatePosts();
+    });
+  });
+
+  updateButtons();
+  updatePosts();
+</script>

@@ -1,0 +1,263 @@
+---
+import "../styles/global.css";
+import {
+  isLocale,
+  LOCALE_META,
+  localePath,
+  ui,
+  type Locale,
+} from "../lib/i18n";
+import { absoluteUrl, site } from "../lib/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogType?: "website" | "article";
+  lang?: Locale;
+  alternates?: Partial<Record<Locale, string>>;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogType = "website",
+  lang = "sv",
+  alternates = {},
+} = Astro.props;
+
+const meta = LOCALE_META[lang];
+const copy = ui[lang];
+const pageTitle = title ? `${title} - ${meta.siteTitle}` : meta.siteTitle;
+const pageDescription = description || meta.siteDescription;
+const canonicalUrl =
+  canonical ||
+  new URL(Astro.url.pathname, Astro.site ?? site.url).toString();
+const currentPath = Astro.url.pathname;
+const buildTime = new Date().toLocaleString(meta.dateLocale, {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+  hour12: false,
+});
+
+const homePath = localePath(lang, "/");
+const blogPath = localePath(lang, "/pages/blog/");
+const postsPath = localePath(lang, "/posts/");
+const tagsPath = localePath(lang, "/tags/");
+const readingListPath = localePath(lang, "/pages/reading-list/");
+
+const navItems = [
+  { href: homePath, label: copy.nav.home, active: currentPath === homePath },
+  {
+    href: blogPath,
+    label: copy.nav.blog,
+    active:
+      currentPath === blogPath ||
+      currentPath.startsWith(postsPath) ||
+      currentPath.startsWith(tagsPath),
+  },
+  {
+    href: readingListPath,
+    label: copy.nav.readingList,
+    active: currentPath.startsWith(readingListPath),
+  },
+  { href: meta.feedPath, label: copy.nav.rss, active: currentPath === meta.feedPath },
+];
+
+const alternateEntries = Object.entries(alternates).filter(
+  (entry): entry is [Locale, string] => isLocale(entry[0]),
+);
+
+function isActive(href: string): boolean {
+  return navItems.some((item) => item.href === href && item.active);
+}
+---
+
+<!doctype html>
+<html lang={meta.htmlLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="color-scheme" content="dark light" />
+
+    <link rel="canonical" href={canonicalUrl} />
+    {
+      alternateEntries.map(([locale, path]) => (
+        <link
+          rel="alternate"
+          hreflang={LOCALE_META[locale].htmlLang}
+          href={absoluteUrl(path)}
+        />
+      ))
+    }
+    {
+      alternates.sv && (
+        <link
+          rel="alternate"
+          hreflang="x-default"
+          href={absoluteUrl(alternates.sv)}
+        />
+      )
+    }
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${meta.siteTitle} RSS`}
+      href={`${site.url}${meta.feedPath}`}
+    />
+    <link rel="sitemap" type="application/xml" href={`${site.url}/sitemap.xml`} />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/jp-favicon.svg" />
+
+    <meta property="og:title" content={title || meta.siteTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={meta.siteTitle} />
+    <meta property="og:locale" content={meta.ogLocale} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta
+      property="og:image"
+      content={`${site.url}/assets/favicon/jp-favicon.svg`}
+    />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title || meta.siteTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta
+      name="twitter:image"
+      content={`${site.url}/assets/favicon/jp-favicon.svg`}
+    />
+  </head>
+  <body>
+    <script is:inline>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var prefersLight = window.matchMedia(
+            "(prefers-color-scheme: light)",
+          ).matches;
+          if (saved === "light" || (!saved && prefersLight)) {
+            document.body.classList.add("light-mode");
+          }
+        } catch (error) {
+          console.warn("Theme preference unavailable", error);
+        }
+      })();
+    </script>
+
+    <a class="skip-link" href="#main">{copy.skipToContent}</a>
+
+    <div class="main-container">
+      <header class="header">
+        <div class="header-top">
+          <p class="site-title">
+            <a href={homePath} class="site-title-link">{meta.siteTitle}</a>
+          </p>
+          <div class="header-actions">
+            {
+              alternateEntries.length > 1 && (
+                <nav class="language-nav" aria-label={copy.language}>
+                  {alternateEntries.map(([locale, path]) => (
+                    <a
+                      href={path}
+                      hreflang={LOCALE_META[locale].htmlLang}
+                      lang={LOCALE_META[locale].htmlLang}
+                      class:list={[
+                        "language-link",
+                        { active: locale === lang },
+                      ]}
+                      aria-current={locale === lang ? "page" : undefined}
+                    >
+                      {LOCALE_META[locale].shortLabel}
+                    </a>
+                  ))}
+                </nav>
+              )
+            }
+            <button
+              type="button"
+              class="theme-toggle"
+              id="theme-toggle"
+              aria-pressed="false"
+              aria-label={copy.switchToLight}
+              data-light-label={copy.switchToLight}
+              data-dark-label={copy.switchToDark}
+            >
+              <span class="theme-icon" aria-hidden="true">🌙</span>
+            </button>
+          </div>
+        </div>
+        <p class="site-subtitle">{meta.siteDescription}</p>
+
+        <nav class="main-nav" aria-label={copy.mainNav}>
+          {
+            navItems.map((item) => (
+              <a
+                href={item.href}
+                class:list={["nav-link", { active: isActive(item.href) }]}
+                aria-current={item.active ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+      </header>
+
+      <main id="main">
+        <slot />
+      </main>
+
+      <footer class="footer">
+        <p>
+          <span class="terminal-prompt">jocke@internet:~$</span> uptime: {buildTime}
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      const themeToggle =
+        document.querySelector<HTMLButtonElement>("#theme-toggle");
+      const themeIcon =
+        themeToggle?.querySelector<HTMLElement>(".theme-icon") ?? null;
+      const lightLabel =
+        themeToggle?.dataset.lightLabel || "Växla till ljust tema";
+      const darkLabel =
+        themeToggle?.dataset.darkLabel || "Växla till mörkt tema";
+
+      function syncThemeToggle() {
+        const light = document.body.classList.contains("light-mode");
+        themeToggle?.setAttribute("aria-pressed", String(light));
+        themeToggle?.setAttribute(
+          "aria-label",
+          light ? darkLabel : lightLabel,
+        );
+        if (themeIcon) {
+          themeIcon.textContent = light ? "☀️" : "🌙";
+        }
+      }
+
+      themeToggle?.addEventListener("click", () => {
+        const light = document.body.classList.toggle("light-mode");
+        try {
+          localStorage.setItem("theme", light ? "light" : "dark");
+        } catch (error) {
+          console.warn("Could not save theme preference", error);
+        }
+        syncThemeToggle();
+      });
+
+      syncThemeToggle();
+    </script>
+
+    <script>
+      import "../scripts/lite-youtube";
+    </script>
+  </body>
+</html>

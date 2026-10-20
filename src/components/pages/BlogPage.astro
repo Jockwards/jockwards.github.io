@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TagFilter from "../TagFilter.astro";
+import {
+  allAlternates,
+  LOCALE_META,
+  tagLabel,
+  ui,
+  type Locale,
+} from "../../lib/i18n";
+import { getPosts, getTags, postPath, tagColor } from "../../lib/posts";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "sv" } = Astro.props;
+const copy = ui[lang];
+const posts = await getPosts(lang);
+const tags = await getTags(lang);
+const dateFormatter = new Intl.DateTimeFormat(LOCALE_META[lang].dateLocale, {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
+---
+
+<BaseLayout
+  title={copy.nav.blog}
+  description={copy.blogDescription}
+  lang={lang}
+  alternates={allAlternates("/pages/blog/")}
+>
+  <section aria-labelledby="blog-heading">
+    <h1 id="blog-heading" class="section-header">{copy.allPosts}</h1>
+    <TagFilter tags={tags} lang={lang} />
+
+    <div class="blog-list">
+      {
+        posts.length === 0 && <p>{copy.noPosts}</p>
+      }
+      {
+        posts.map((post) => (
+          <article
+            class="blog-item"
+            data-tags={post.data.tags.length ? post.data.tags.join(",") : undefined}
+          >
+            <a href={postPath(post)} class="blog-link">
+              <div class="blog-main">
+                <time class="blog-date" datetime={post.data.date.toISOString()}>
+                  {dateFormatter.format(post.data.date)}
+                </time>
+                <div class="blog-title-and-score">
+                  <h2 class="blog-title">
+                    {post.data.title}
+                    {post.data.review_score !== undefined
+                      ? ` (${post.data.review_score}/10)`
+                      : ""}
+                  </h2>
+                </div>
+              </div>
+
+              {post.data.tags.length > 0 && (
+                <div class="blog-meta">
+                  <div class="blog-tags">
+                    {post.data.tags.map((tag) => (
+                      <span class="blog-tag" style={`--tag-color: ${tagColor(tag)}`}>
+                        <span class="tag-dot" aria-hidden="true" />
+                        {tagLabel(tag, lang)}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
