@@ -66,8 +66,10 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("postExcerpt", (post, length = 280) => {
-    if (post.data.description) return post.data.description;
-    const text = post.templateContent?.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+    const text = (post.data.description || post.data.title || "")
+      .replace(/<[^>]*>/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
     if (!text) return "";
     if (text.length <= length) return text;
     return `${text.slice(0, length).trim()}…`;
