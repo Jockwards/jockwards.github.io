@@ -43,6 +43,8 @@ npm run dev
 
 The dev server normally runs at `http://localhost:4321`.
 
+TypeScript is pinned to 6.x because `@astrojs/check` supports `^5.0.0 || ^6.0.0`. Do not force TypeScript 7 until Astro adds support.
+
 Create a local `.env` (gitignored) with:
 
 ```dotenv
@@ -184,13 +186,17 @@ Post and page alternates are emitted as `hreflang` links when a translation exis
 6. Cloudflare Pages builds and deploys automatically.
 7. Verify the live site and `/feed.xml`.
 
-Before switching the Astro branch to production:
+## Production Checklist
 
-- Confirm Cloudflare `NODE_VERSION=22.22.0`.
-- Confirm both Production and Preview have TMDB and Hardcover credentials.
-- Confirm the existing URLs and `/feed.xml` still work.
-- Confirm the reading list and post metadata render.
-- Confirm the accessibility check passes.
+The Astro site is live from `master`. For future changes, verify:
+
+- Cloudflare `NODE_VERSION=22.22.0`.
+- Production and Preview have TMDB and Hardcover credentials.
+- Existing URLs and `/feed.xml` still work after route changes.
+- The reading list and post metadata render.
+- The accessibility check passes.
+
+Content and code changes are committed to `master`; Cloudflare Pages deploys them automatically. Feature branches still get preview deployments.
 
 ## Files That Should Be Committed
 
