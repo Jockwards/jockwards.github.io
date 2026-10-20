@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import readline from "node:readline/promises";
 import { stdin, stdout } from "node:process";
-import matter from "gray-matter";
+import { stringifyFrontmatter } from "./frontmatter";
 import { getHardcoverData, searchHardcover } from "../src/lib/hardcover";
 import { getTmdbData, searchTmdb } from "../src/lib/tmdb";
 
@@ -219,7 +219,7 @@ function writePost(
   fs.mkdirSync(POSTS_DIR, { recursive: true });
   const slug = uniqueSlug(slugify(title));
   const file = path.join(POSTS_DIR, `${slug}.md`);
-  const content = matter.stringify(body, frontmatter);
+  const content = stringifyFrontmatter(body, frontmatter);
   fs.writeFileSync(file, content, { flag: "wx" });
   console.log(`\nSkapade ${path.relative(process.cwd(), file)}`);
 }

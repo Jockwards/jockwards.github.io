@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-import matter from "gray-matter";
+import { parseFrontmatter, stringifyFrontmatter } from "./frontmatter";
 
 export type Locale = "en" | "es";
 
@@ -39,7 +39,7 @@ export function getSourcePosts(): SourcePost[] {
     .map((file) => {
       const fullPath = path.join(SOURCE_DIR, file);
       const raw = fs.readFileSync(fullPath, "utf8");
-      const parsed = matter(raw);
+      const parsed = parseFrontmatter(raw);
 
       return {
         slug: path.basename(file, ".md"),
@@ -62,7 +62,7 @@ export function readTranslation(
   }
 
   const raw = fs.readFileSync(file, "utf8");
-  const parsed = matter(raw);
+  const parsed = parseFrontmatter(raw);
 
   return {
     file,
@@ -116,7 +116,7 @@ export function writeTranslation(
 
   const file = path.join(CONTENT_DIR, locale, `${source.slug}.md`);
   fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.writeFileSync(file, matter.stringify(translated.body, frontmatter));
+  fs.writeFileSync(file, stringifyFrontmatter(translated.body, frontmatter));
   return file;
 }
 
